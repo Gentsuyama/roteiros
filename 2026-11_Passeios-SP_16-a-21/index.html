@@ -1,0 +1,1024 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<style>:root{color-scheme:light;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0;font:14px system-ui,-apple-system,"Segoe UI",sans-serif}img{max-width:100%}[hidden]{display:none!important}</style>
+<title>Passeios 16–21 Novembro</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=Figtree:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap">
+<style>
+/* Layout: a semana como uma linha de metrô (estações = dias), depois um catálogo filtrável de "ingressos" e os painéis de análise. */
+:root{
+  --bg:#F3F5F8; --surface:#FFFFFF; --sunk:#E8ECF2; --ink:#121821; --muted:#566173; --line:#D7DDE6;
+  --l1:#0A5DB0; --l2:#00845F; --l3:#D9362B; --l4:#E0A800; --l5:#8546A0; --l10:#00879A; --l7:#A3195B;
+  --on-l4:#2A2100;
+  --ok:#1C8A4B; --warn:#B86E00; --bad:#C2302C; --unk:#8C96A6;
+  --display:'Archivo','Arial Narrow',system-ui,sans-serif;
+  --body:'Figtree',system-ui,-apple-system,'Segoe UI',sans-serif;
+  --mono:'JetBrains Mono',ui-monospace,Consolas,monospace;
+  --r:10px;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0D1117; --surface:#161C25; --sunk:#1E2631; --ink:#E6EBF2; --muted:#9AA5B5; --line:#2A3340;
+  --l1:#4B9BEB; --l2:#2DBE8C; --l3:#FF6B5E; --l4:#FFCB3D; --l5:#C38BE0; --l10:#2EC1D3; --l7:#F06AA4; --on-l4:#2A2100;
+  --ok:#4CC27F; --warn:#F0A63A; --bad:#FF6B6B; --unk:#6E7889; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0D1117; --surface:#161C25; --sunk:#1E2631; --ink:#E6EBF2; --muted:#9AA5B5; --line:#2A3340;
+  --l1:#4B9BEB; --l2:#2DBE8C; --l3:#FF6B5E; --l4:#FFCB3D; --l5:#C38BE0; --l10:#2EC1D3; --l7:#F06AA4; --on-l4:#2A2100;
+  --ok:#4CC27F; --warn:#F0A63A; --bad:#FF6B6B; --unk:#6E7889; color-scheme:dark}
+
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:15px;line-height:1.5;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:0 48px}
+.wrap{max-width:1180px;margin:0 auto}
+h1,h2,h3{font-family:var(--display);text-wrap:balance;margin:0;line-height:1.1}
+h2{font-size:clamp(22px,3vw,30px);font-weight:800;font-stretch:112%;letter-spacing:-.01em}
+h3{font-size:17px;font-weight:700;font-stretch:105%}
+a{color:var(--l1)}
+button{font:inherit;color:inherit}
+:focus-visible{outline:3px solid var(--l1);outline-offset:2px;border-radius:4px}
+.eyebrow{font-family:var(--mono);font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.num{font-family:var(--mono);font-variant-numeric:tabular-nums}
+section{margin-top:56px}
+.sec-head{display:flex;flex-wrap:wrap;align-items:end;justify-content:space-between;gap:8px 24px;margin-bottom:18px}
+.sec-head p{margin:6px 0 0;color:var(--muted);max-width:68ch}
+
+/* ---------- topo ---------- */
+header.top{padding-top:36px;display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);gap:28px;align-items:end}
+.title-block h1{font-size:clamp(38px,6.4vw,76px);font-weight:900;font-stretch:118%;letter-spacing:-.025em;line-height:.95}
+.title-block h1 .dates{display:block;color:var(--l1)}
+.title-block .lead{margin:14px 0 0;color:var(--muted);max-width:56ch;font-size:16px}
+.family{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+.who-chip{display:inline-flex;align-items:center;gap:8px;padding:6px 12px 6px 6px;border:1px solid var(--line);border-radius:999px;background:var(--surface);font-weight:600;font-size:14px}
+.who-chip b{display:inline-grid;place-items:center;width:26px;height:26px;border-radius:50%;font-family:var(--mono);font-size:11px;color:#fff}
+.alerts{display:grid;gap:10px}
+.alert{display:grid;grid-template-columns:34px minmax(0,1fr);gap:12px;align-items:start;padding:12px 14px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r)}
+.alert .ico{width:34px;height:34px;border-radius:8px;display:grid;place-items:center;font-family:var(--display);font-weight:900;color:#fff}
+.alert strong{display:block;font-size:14.5px}
+.alert span{color:var(--muted);font-size:13.5px}
+
+/* ---------- linha da semana ---------- */
+.line-wrap{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:22px 18px 18px}
+.metro{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));position:relative}
+.metro::before{content:"";position:absolute;left:8.33%;right:8.33%;top:93px;height:10px;border-radius:5px;background:var(--l1)}
+.stop{position:relative;display:flex;flex-direction:column;align-items:center;text-align:center;gap:6px;padding:0 6px;cursor:pointer;background:none;border:0}
+.stop .dow{font-family:var(--display);font-weight:800;font-stretch:115%;font-size:15px;text-transform:uppercase;letter-spacing:.04em}
+.stop .dnum{font-family:var(--display);font-weight:900;font-size:28px;line-height:1}
+.stop .wx{display:flex;align-items:center;gap:4px;font-size:12px;color:var(--muted);height:20px}
+.stop .wx svg{width:20px;height:20px}
+.stop .dot{width:30px;height:30px;border-radius:50%;background:var(--surface);border:6px solid var(--l1);z-index:1;margin-top:2px;transition:transform .15s}
+.stop.hol .dot{border-color:var(--l3)}
+.stop[aria-pressed="true"] .dot{background:var(--l1);transform:scale(1.15)}
+.stop.hol[aria-pressed="true"] .dot{background:var(--l3)}
+.stop .tag{font-family:var(--mono);font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;padding:2px 6px;border-radius:4px;background:var(--l3);color:#fff}
+.stop .tag.mute{background:var(--sunk);color:var(--muted)}
+.stop .open{font-size:12.5px;color:var(--muted)}
+.stop .open b{color:var(--ink);font-family:var(--mono)}
+.sug{margin-top:4px;width:100%;display:grid;gap:6px;text-align:left}
+.sug .pick{display:grid;grid-template-columns:40px minmax(0,1fr);gap:8px;align-items:center;font-size:13px;line-height:1.25}
+.sug .pick img{width:40px;height:40px;object-fit:cover;border-radius:6px;display:block}
+.sug .pick small{display:block;color:var(--muted);font-size:11.5px}
+.sug .rain{font-size:12px;color:var(--muted);border-top:1px dashed var(--line);padding-top:6px}
+.sug .rain b{color:var(--ink);font-weight:600}
+.line-note{margin:16px 0 0;font-size:13px;color:var(--muted)}
+
+/* ---------- filtros ---------- */
+.filters{display:grid;gap:10px;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:14px}
+.frow{display:flex;flex-wrap:wrap;align-items:center;gap:6px}
+.frow .lbl{font-family:var(--mono);font-size:11px;letter-spacing:.07em;text-transform:uppercase;color:var(--muted);min-width:92px}
+.chip{border:1px solid var(--line);background:var(--bg);border-radius:999px;padding:5px 12px;font-size:13.5px;cursor:pointer;display:inline-flex;align-items:center;gap:6px}
+.chip .sw{width:10px;height:10px;border-radius:50%}
+.chip[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.count{font-size:13.5px;color:var(--muted)}
+.count b{color:var(--ink)}
+
+/* ---------- cards ---------- */
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:16px;margin-top:16px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:12px;overflow:hidden;display:flex;flex-direction:column;min-width:0}
+.ph{position:relative;aspect-ratio:16/9;background:var(--sunk);max-width:100%}
+.ph img{width:100%;height:100%;object-fit:cover;display:block}
+.line-pill{position:absolute;left:10px;top:10px;display:inline-flex;align-items:center;gap:6px;background:var(--c);color:#fff;font-family:var(--display);font-weight:700;font-stretch:108%;font-size:12px;padding:3px 9px 3px 4px;border-radius:999px}
+.line-pill i{width:16px;height:16px;border-radius:50%;background:#fff;display:inline-block;border:4px solid var(--c);box-shadow:0 0 0 1px #fff}
+.line-pill.y{color:var(--on-l4)}
+.src{position:absolute;right:10px;top:10px;font-family:var(--mono);font-size:10.5px;letter-spacing:.05em;text-transform:uppercase;background:rgba(10,14,20,.72);color:#fff;padding:3px 7px;border-radius:4px}
+.src.new{background:var(--l2)}
+.flag{position:absolute;left:10px;bottom:10px;font-size:12px;font-weight:600;background:var(--warn);color:#fff;padding:3px 8px;border-radius:4px}
+.bd{padding:14px 14px 12px;display:flex;flex-direction:column;gap:10px;flex:1}
+.meta{margin:0;color:var(--muted);font-size:13px}
+.days{display:grid;grid-template-columns:repeat(6,1fr);gap:4px}
+.dd{font-family:var(--mono);font-size:11px;text-align:center;border-radius:4px;padding:3px 0;line-height:1.2}
+.dd small{display:block;font-size:9.5px;opacity:.85}
+.s1{background:color-mix(in srgb,var(--ok) 18%,transparent);color:var(--ok)}
+.s0{background:var(--sunk);color:var(--unk);text-decoration:line-through}
+.s2{background:color-mix(in srgb,var(--warn) 16%,transparent);color:var(--warn)}
+.dd.sel{outline:2px solid var(--ink);outline-offset:-2px}
+.fit{display:grid;gap:5px;border-top:1px solid var(--line);padding-top:10px}
+.fr{display:grid;grid-template-columns:52px 40px minmax(0,1fr);gap:8px;align-items:baseline;font-size:12.5px;line-height:1.3}
+.fr .who{font-weight:700;font-size:12px}
+.pips{display:inline-flex;gap:3px}
+.pips i{width:9px;height:9px;border-radius:50%;background:var(--sunk);display:inline-block}
+.pips i.on{background:var(--pc,var(--l1))}
+.fr .ft{color:var(--muted)}
+.foot{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:auto;padding-top:6px}
+.price{font-family:var(--mono);font-weight:700;font-size:17px}
+.price small{display:block;font-family:var(--body);font-weight:500;font-size:11.5px;color:var(--muted)}
+.btn{border:1px solid var(--ink);background:var(--ink);color:var(--bg);border-radius:8px;padding:7px 12px;font-size:13.5px;font-weight:600;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:6px}
+.btn.ghost{background:transparent;color:var(--ink);border-color:var(--line)}
+.empty{padding:28px;text-align:center;color:var(--muted);background:var(--surface);border:1px dashed var(--line);border-radius:12px;grid-column:1/-1}
+
+/* ---------- grade ---------- */
+.tbl-wrap{overflow-x:auto;background:var(--surface);border:1px solid var(--line);border-radius:12px}
+table.mx{border-collapse:separate;border-spacing:0;width:100%;min-width:720px;font-size:13px}
+.mx th,.mx td{padding:6px 8px;border-bottom:1px solid var(--line);text-align:center;white-space:nowrap}
+.mx thead th{font-family:var(--display);font-weight:800;font-stretch:110%;font-size:13px;position:sticky;top:0;background:var(--surface)}
+.mx thead th.hol{color:var(--l3)}
+.mx th.nm{text-align:left;position:sticky;left:0;background:var(--surface);font-weight:600;font-family:var(--body);min-width:190px;z-index:1}
+.mx th.nm .b{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:8px;vertical-align:-1px}
+.mx td .cell{display:block;border-radius:4px;padding:3px 0;font-family:var(--mono);font-size:11px}
+.mx tr.grp th{background:var(--sunk);text-align:left;font-family:var(--mono);font-size:11px;letter-spacing:.07em;text-transform:uppercase;color:var(--muted);position:sticky;left:0}
+.mx td.k{color:var(--muted);font-size:12px}
+.legend{display:flex;flex-wrap:wrap;gap:14px;margin-top:10px;font-size:12.5px;color:var(--muted)}
+.legend span{display:inline-flex;align-items:center;gap:6px}
+.legend i{width:22px;height:14px;border-radius:3px;display:inline-block}
+
+/* ---------- painéis ---------- */
+.two{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:18px}
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:18px;min-width:0}
+.panel h3{margin-bottom:4px}
+.panel .sub{margin:0 0 14px;color:var(--muted);font-size:13px}
+.bars{display:grid;gap:5px}
+.bar{display:grid;grid-template-columns:150px minmax(0,1fr);gap:10px;align-items:center;font-size:12.5px}
+.bar .bn{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.bar .track{position:relative;height:18px}
+.bar .fill{position:absolute;left:0;top:0;bottom:0;border-radius:3px;background:var(--c)}
+.bar .fill.ex{background:repeating-linear-gradient(135deg,var(--c) 0 3px,transparent 3px 6px);opacity:.75}
+.bar .bv{position:absolute;top:0;font-family:var(--mono);font-size:11.5px;line-height:18px;white-space:nowrap}
+.toggle{display:inline-flex;align-items:center;gap:8px;font-size:13px;color:var(--muted);cursor:pointer;margin-bottom:12px}
+.tbd{margin-top:12px;font-size:12.5px;color:var(--muted)}
+.radar-wrap{overflow-x:auto}
+.radar{width:100%;min-width:480px;height:auto;display:block}
+.radar text{font-family:var(--body);fill:var(--ink)}
+.radar .ring{fill:none;stroke:var(--line);stroke-width:1.2}
+.radar .ringlbl{font-family:var(--mono);font-size:10.5px;fill:var(--muted)}
+.radar .lbl{font-size:10.5px}
+.radar .ctr{fill:var(--ink)}
+.radar g.pt{cursor:pointer}
+.radar g.pt:hover circle{stroke:var(--ink);stroke-width:2}
+
+/* ---------- planejador ---------- */
+.plan{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:18px;align-items:start}
+.plan-days{display:grid;gap:10px}
+.pd{display:grid;grid-template-columns:86px minmax(0,1fr) minmax(0,1fr) 88px;gap:10px;align-items:center;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:10px 12px}
+.pd .pdh{font-family:var(--display);font-weight:800;font-stretch:112%;line-height:1.1}
+.pd .pdh small{display:block;font-family:var(--mono);font-weight:500;font-size:11px;color:var(--muted)}
+.pd .pdh.hol{color:var(--l3)}
+.pd select{width:100%;font:inherit;font-size:13.5px;padding:7px 8px;border-radius:8px;border:1px solid var(--line);background:var(--bg);color:var(--ink);min-width:0}
+.pd .pc{font-family:var(--mono);font-size:13px;text-align:right}
+.pd .warn{grid-column:2/-1;font-size:12px;color:var(--bad);margin-top:-4px}
+.pd .warn.w{color:var(--warn)}
+.summary{position:sticky;top:calc(env(safe-area-inset-top,0px) + 12px);background:var(--ink);color:var(--bg);border-radius:12px;padding:18px;display:grid;gap:14px}
+.summary .big{font-family:var(--mono);font-size:32px;font-weight:700;line-height:1}
+.summary .eyebrow{color:color-mix(in srgb,var(--bg) 70%,transparent)}
+.summary .meter{display:grid;grid-template-columns:52px minmax(0,1fr) 40px;gap:8px;align-items:center;font-size:13px}
+.summary .meter .t{height:8px;border-radius:4px;background:color-mix(in srgb,var(--bg) 22%,transparent);position:relative;overflow:hidden}
+.summary .meter .t i{position:absolute;left:0;top:0;bottom:0;border-radius:4px}
+.summary .acts{display:flex;flex-wrap:wrap;gap:8px}
+.summary .btn{background:var(--bg);color:var(--ink);border-color:var(--bg)}
+.summary .btn.ghost{background:transparent;color:var(--bg);border-color:color-mix(in srgb,var(--bg) 40%,transparent)}
+.summary p{margin:0;font-size:12px;color:color-mix(in srgb,var(--bg) 70%,transparent)}
+
+/* ---------- avisos / fontes ---------- */
+.notes{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:12px}
+.note{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:14px;font-size:13.5px}
+.note h3{font-size:15px;margin-bottom:6px;display:flex;align-items:center;gap:8px}
+.note h3 i{width:10px;height:10px;border-radius:2px;display:inline-block}
+.note p,.note ul{margin:0;color:var(--muted)}
+.note ul{padding-left:18px}
+.note li+li{margin-top:4px}
+footer{margin-top:48px;font-size:12.5px;color:var(--muted);border-top:1px solid var(--line);padding-top:16px}
+
+/* ---------- detalhe ---------- */
+dialog{border:0;padding:0;border-radius:14px;max-width:760px;width:calc(100% - 32px);background:var(--surface);color:var(--ink);max-height:calc(100% - 32px)}
+dialog::backdrop{background:rgba(5,8,12,.6)}
+.dlg-ph{position:relative;aspect-ratio:21/9;background:var(--sunk)}
+.dlg-ph img{width:100%;height:100%;object-fit:cover;display:block}
+.dlg-x{position:absolute;right:10px;top:10px;width:36px;height:36px;border-radius:50%;border:0;background:rgba(10,14,20,.75);color:#fff;font-size:20px;cursor:pointer}
+.dlg-bd{padding:18px 20px 22px;display:grid;gap:14px}
+.dlg-bd h2{font-size:26px}
+.kv{display:grid;grid-template-columns:120px minmax(0,1fr);gap:6px 14px;font-size:14px}
+.kv dt{font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);padding-top:3px}
+.kv dd{margin:0}
+.links{display:flex;flex-wrap:wrap;gap:8px}
+.coupon{display:inline-flex;align-items:center;gap:8px;border:1px dashed var(--l3);border-radius:8px;padding:4px 6px 4px 10px;font-family:var(--mono);font-weight:700}
+.coupon button{border:0;background:var(--l3);color:#fff;border-radius:6px;padding:4px 8px;font-size:12px;cursor:pointer}
+.alertbox{background:color-mix(in srgb,var(--warn) 12%,transparent);border-left:3px solid var(--warn);padding:10px 12px;border-radius:6px;font-size:13.5px}
+
+/* Paulista */
+.today{display:grid;grid-template-columns:minmax(0,1fr);gap:18px;align-items:start;margin-bottom:18px}
+.today .panel h3{display:flex;align-items:center;gap:8px}
+.today ul{margin:8px 0 0;padding-left:18px;font-size:13.5px;color:var(--muted)}
+.today li+li{margin-top:6px}
+.today li b{color:var(--ink)}
+.pdays{display:flex;flex-wrap:wrap;gap:6px;margin:4px 0 10px}
+.av-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
+.av{display:block;width:100%;min-width:860px;height:auto}
+.av text{font-family:var(--body);fill:var(--ink)}
+.av .num{font-family:var(--mono);fill:var(--muted);font-size:11px}
+.av g[data-open]{cursor:pointer}
+.av g[data-open]:focus-visible{outline:none}
+.av g[data-open]:focus-visible circle{stroke:var(--l1);stroke-width:4}
+.pt{border-collapse:collapse;width:100%;font-size:13.5px;min-width:620px}
+.pt th,.pt td{padding:7px 8px;border-bottom:1px solid var(--line);text-align:center;vertical-align:middle}
+.pt th:first-child,.pt td.ob{text-align:left}
+.pt td.ob{color:var(--muted);font-size:12.5px;min-width:220px}
+.pt thead th{font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);font-weight:500}
+.pt thead th.now{color:var(--ink);font-weight:700}
+.pv{display:inline-grid;place-items:center;min-width:34px;height:24px;padding:0 6px;border-radius:5px;font-family:var(--mono);font-size:11px;font-weight:700}
+.pv.v0{background:var(--sunk);color:var(--muted)}
+.pv.v1{background:color-mix(in srgb,var(--l1) 16%,transparent);color:var(--l1)}
+.pv.v2{background:color-mix(in srgb,var(--warn) 16%,transparent);color:var(--warn)}
+.pv.v3{background:var(--ok);color:#fff}
+.pv.v4{background:color-mix(in srgb,var(--ok) 22%,transparent);color:var(--ok);border:1px dashed var(--ok)}
+.pleg{display:flex;flex-wrap:wrap;gap:6px 14px;margin-top:10px;font-size:12.5px;color:var(--muted);align-items:center}
+@media (max-width:900px){.today{grid-template-columns:1fr}}
+
+/* Liberdade a pé */
+.lib-strip{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;margin-bottom:18px}
+.lib-strip figure{margin:0;position:relative;border-radius:10px;overflow:hidden;aspect-ratio:4/3;max-width:100%}
+.lib-strip img{width:100%;height:100%;object-fit:cover;display:block}
+.lib-strip figcaption{position:absolute;left:0;right:0;bottom:0;padding:18px 8px 6px;font-size:12px;font-weight:600;color:#fff;background:linear-gradient(transparent,rgba(0,0,0,.72))}
+.lib{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:18px;align-items:start}
+.walk{list-style:none;margin:0;padding:0;position:relative}
+.walk::before{content:"";position:absolute;left:21px;top:20px;bottom:20px;width:6px;border-radius:3px;background:var(--l3)}
+.wk{position:relative;display:grid;grid-template-columns:48px minmax(0,1fr) 104px;gap:14px;padding:10px 0;align-items:start}
+.wk .n{width:48px;height:48px;border-radius:50%;background:var(--surface);border:5px solid var(--l3);display:grid;place-items:center;font-family:var(--mono);font-weight:700;font-size:16px;position:relative;z-index:1}
+.wk .hd{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 10px}
+.wk .t{font-family:var(--mono);font-size:12px;color:var(--muted)}
+.wk p{margin:4px 0 0;color:var(--muted);font-size:13.5px}
+.wk .ad{font-size:12.5px;margin-top:4px}
+.wk img{width:104px;height:78px;object-fit:cover;border-radius:8px;max-width:100%}
+.wtag{font-family:var(--mono);font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;padding:2px 6px;border-radius:4px;border:1px solid var(--line);color:var(--muted)}
+.wk.end .n{border-color:var(--ink)}
+.lib-side{display:grid;gap:14px}
+.lib-side .sub{margin:4px 0 10px;color:var(--muted);font-size:13px}
+.dv{display:grid;grid-template-columns:54px 22px minmax(0,1fr);gap:6px 8px;font-size:13.5px;align-items:start}
+.dv b{font-family:var(--mono);font-size:12px;padding-top:1px}
+.dv .ic{width:18px;height:18px;border-radius:50%;display:grid;place-items:center;font-size:11px;font-weight:700;color:#fff;margin-top:1px}
+.dv .ic.ok{background:var(--ok)} .dv .ic.warn{background:var(--warn)}
+.dv span:last-child{color:var(--muted)}
+.lib-side ul{margin:8px 0 0;padding-left:18px;color:var(--muted);font-size:13.5px}
+.lib-side li+li{margin-top:4px}
+
+@media (max-width:900px){
+  header.top{grid-template-columns:1fr}
+  .two,.plan{grid-template-columns:1fr}
+  .summary{position:static}
+}
+@media (max-width:760px){
+  .metro{grid-template-columns:1fr;gap:14px}
+  .metro::before{left:14px;right:auto;top:10px;bottom:10px;width:10px;height:auto}
+  .stop{display:grid;grid-template-columns:30px 64px minmax(0,1fr);grid-template-areas:"dot day sug" "dot meta sug";align-items:start;text-align:left;column-gap:12px;row-gap:2px;padding:0}
+  .stop .dot{grid-area:dot;margin-top:4px}
+  .stop .daybox{grid-area:day}
+  .stop .metabox{grid-area:meta}
+  .stop .sug{grid-area:sug;margin-top:0}
+  .pd{grid-template-columns:70px minmax(0,1fr);}
+  .pd select{grid-column:2}
+  .pd .pc{grid-column:2;text-align:left}
+  .bar{grid-template-columns:110px minmax(0,1fr)}
+  .frow .lbl{min-width:100%}
+  .lib{grid-template-columns:1fr}
+  .lib-strip{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .wk{grid-template-columns:48px minmax(0,1fr)}
+  .wk img{display:none}
+}
+@media (min-width:761px){.stop .daybox,.stop .metabox{display:contents}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+
+
+<div class="wrap">
+
+<header class="top">
+  <div class="title-block">
+    <div class="eyebrow">São Paulo e arredores · roteiro da família</div>
+    <h1>Passeios <span class="dates">16 → 21 nov</span></h1>
+    <p class="lead">Seus 21 lugares, conferidos um a um, mais 15 opções novas, com dias de funcionamento, previsão do tempo, preços para 4 pessoas e o quanto cada um de vocês deve curtir.</p>
+    <div class="family">
+      <span class="who-chip"><b style="background:var(--l1)">2</b>Você e sua esposa</span>
+      <span class="who-chip"><b style="background:var(--l5)">15</b>Filha mais velha</span>
+      <span class="who-chip"><b style="background:var(--l2)">9</b>Filha mais nova</span>
+    </div>
+  </div>
+  <div class="alerts">
+    <div class="alert"><div class="ico" style="background:var(--l3)">20</div><div><strong>Sexta 20/11 é feriado (Consciência Negra)</strong><span>Lugares cheios e preço de fim de semana. Prefira o que tem horário marcado.</span></div></div>
+    <div class="alert"><div class="ico" style="background:var(--muted)">S</div><div><strong>Segunda 16/11: quase tudo fecha</strong><span>Abrem Zoo, Simba Safari, Aquário, Bário Bar, parques, a Pinacoteca e a Biblioteca Monteiro Lobato. Na Paulista, os museus fecham.</span></div></div>
+    <div class="alert"><div class="ico" style="background:var(--l1)">☂</div><div><strong>Segunda com chuva o dia todo</strong><span>Terça segue sendo o dia mais seco. Quarta a sexta com garoa e calor (até 32°). Sábado com temporal à tarde.</span></div></div>
+  </div>
+</header>
+
+<section id="semana">
+  <div class="sec-head">
+    <div><div class="eyebrow">Linha da semana</div><h2>Minha sugestão, dia a dia</h2>
+    <p>Montei a semana a partir da previsão do tempo e de quem abre em cada dia. Clique numa estação para ver só o que funciona naquele dia.</p></div>
+  </div>
+  <div class="line-wrap">
+    <div class="metro" id="metro"></div>
+    <p class="line-note">Previsão Open-Meteo atualizada em 16/11. Ela ainda muda, então confira na véspera (CGE, Climatempo).</p>
+  </div>
+</section>
+
+<section id="paulista">
+  <div class="sec-head">
+    <div><div class="eyebrow">Avenida Paulista · do Paraíso à Consolação</div><h2>O que abre na Paulista em cada dia</h2>
+    <p>Quase tudo na avenida é grátis, mas os museus fecham às segundas. Escolha o dia para ver quem abre. O mapa é esquemático, na ordem da avenida; o número é a altura na Paulista.</p></div>
+  </div>
+  <div class="today">
+    <div class="panel">
+      <h3>☂ Hoje, segunda 16, com chuva</h3>
+      <ul>
+        <li><b>Na Paulista os museus fecham hoje</b>: MASP, IMS, Japan House, Itaú Cultural, Sesc e Casa das Rosas.</li>
+        <li><b>Melhor programa coberto hoje:</b> <a href="#" data-open="pinacoteca">Pinacoteca</a>, na Luz. Abre das 10h às 18h e fecha às terças.</li>
+        <li><b>Grátis e aberta hoje:</b> <a href="#" data-open="bib-monteiro">Biblioteca Monteiro Lobato</a>, das 8h às 17h, a 12 min da Paulista, e a <a href="#" data-open="bib-mackenzie">Biblioteca George Alexander</a>, do Mackenzie, até 22h.</li>
+        <li><b>Na própria Paulista:</b> a <a href="#" data-open="drummond">Drummond Livraria</a>, no Conjunto Nacional, abre hoje das 10h às 22h e tem uma área nova infantojuvenil e geek. O cinema Reserva Cultural deve abrir, mas não confirmei.</li>
+        <li><b>Da sua lista:</b> <a href="#" data-open="aquario">Aquário</a> e, à noite, <a href="#" data-open="bario">Bário Bar</a>.</li>
+        <li><b>Deixe para amanhã:</b> terça é o dia grátis do MASP e o mais seco da semana.</li>
+      </ul>
+    </div>
+    <div class="panel">
+      <h3>Mapa da avenida</h3>
+      <div class="pdays" id="pauDays"></div>
+      <div class="av-wrap"><svg class="av" id="avSvg" viewBox="0 0 1000 200" role="img" aria-label="Lugares ao longo da Avenida Paulista"></svg></div>
+      <div class="pleg"><span class="pv v3">R$0</span>grátis <span class="pv v4">R$0*</span>grátis em parte do dia <span class="pv v1">abre</span>pago <span class="pv v2">?</span>não confirmado <span class="pv v0">✕</span>fechado</div>
+    </div>
+  </div>
+  <div class="panel"><div class="tbl-wrap av-wrap"><table class="pt" id="pauTbl"></table></div>
+  <p style="margin:10px 0 0;font-size:13px;color:var(--muted)">Um roteiro grátis, a pé, de terça a sábado: Japan House → Casa das Rosas → Itaú Cultural → MASP (só grátis na terça) → Parque Trianon → IMS. São uns 3 km em linha reta pela avenida, com três estações de metrô no caminho.</p></div>
+</section>
+
+<section id="explorar">
+  <div class="sec-head">
+    <div><div class="eyebrow">Catálogo</div><h2>Todas as opções</h2>
+    <p>As notas de 1 a 3 bolinhas mostram o quanto cada pessoa deve curtir. Nenhum lugar foi descartado: os filtros só ajudam a comparar.</p></div>
+    <div class="count" id="count"></div>
+  </div>
+  <div class="filters" id="filters"></div>
+  <div class="grid" id="grid"></div>
+</section>
+
+<section id="liberdade">
+  <div class="sec-head">
+    <div><div class="eyebrow">Roteiro de um dia · bairro da Liberdade</div><h2>Liberdade a pé</h2>
+    <p>Nove paradas e uns 2 km de caminhada, da Praça da Liberdade até o metrô São Joaquim. Os horários são só referência, começando às 10h. Comida, lojas e museu agradam as três idades.</p></div>
+    <a class="btn ghost" href="#" data-open="liberdade">Ficha do passeio</a>
+  </div>
+  <div class="lib-strip">
+    <figure><img src="fotos/lib-praca.jpg" alt="Praça da Liberdade com as lanternas vermelhas"><figcaption>Praça da Liberdade</figcaption></figure>
+    <figure><img src="fotos/liberdade.jpg" alt="Rua Galvão Bueno com as luminárias suzuran"><figcaption>Luminárias da Galvão Bueno</figcaption></figure>
+    <figure><img src="fotos/lib-jardim.jpg" alt="Portal do Jardim Oriental"><figcaption>Jardim Oriental</figcaption></figure>
+    <figure><img src="fotos/lib-museu.jpg" alt="Prédio do Museu da Imigração Japonesa"><figcaption>Museu da Imigração Japonesa</figcaption></figure>
+  </div>
+  <div class="lib">
+    <ol class="walk" id="walk"></ol>
+    <aside class="lib-side">
+      <div class="panel"><h3>Qual dia ir</h3><p class="sub">O bairro abre todo dia. O que muda é o que funciona e o movimento.</p><div class="dv" id="libDays"></div></div>
+      <div class="panel"><h3>De carro</h3><ul>
+        <li>Não achei preço de estacionamento. Estimei ~R$ 50 por 4 a 5 horas (no centro a hora gira em torno de R$ 20; pacote de período sai mais barato).</li>
+        <li>Domingos e feriados, a Galvão Bueno, a Rua dos Aflitos e trechos da Rua dos Estudantes e da Américo de Campos fecham para carros das 9h às 20h. Na sexta 20, pare fora dessa área ou vá de metrô (Linha 1-Azul).</li>
+      </ul></div>
+      <div class="panel"><h3>Dicas</h3><ul>
+        <li>Leve dinheiro: barracas da feira e alguns lámens não aceitam cartão.</li>
+        <li>No fim de semana enche muito: combine com as meninas um ponto de encontro (a saída do metrô na praça).</li>
+        <li>Combina com a <a href="#" data-open="gibiteca">Gibiteca Henfil</a> (CCSP), a uma estação de metrô, aberta até 20h de terça a sexta.</li>
+        <li>Sábado 21: a <b>Black São Paulo Walk</b>, caminhada guiada de afroturismo, sai da Praça da Liberdade às 10h (<a href="https://www.sympla.com.br/evento/black-sao-paulo-walk-2111/3625146" target="_blank" rel="noopener">Sympla ↗</a>).</li>
+      </ul></div>
+    </aside>
+  </div>
+</section>
+
+<section id="grade">
+  <div class="sec-head">
+    <div><div class="eyebrow">Funcionamento</div><h2>Quem abre em cada dia</h2>
+    <p>Grade com todos os lugares. Amarelo significa que não consegui confirmar: ligue ou veja o site antes de sair.</p></div>
+  </div>
+  <div class="tbl-wrap"><table class="mx" id="mx"></table></div>
+  <div class="legend">
+    <span><i class="s1"></i>Abre</span><span><i class="s0" style="text-decoration:none"></i>Fechado</span><span><i class="s2"></i>Não confirmado</span>
+  </div>
+</section>
+
+<section id="analise">
+  <div class="sec-head"><div><div class="eyebrow">Análise</div><h2>Quanto custa e quão longe fica</h2></div></div>
+  <div class="two">
+    <div class="panel">
+      <h3>Custo estimado para os 4</h3>
+      <p class="sub">2 inteiras + 2 meias (as filhas com carteirinha de estudante), no dia mais barato da semana em que o lugar abre.</p>
+      <label class="toggle"><input type="checkbox" id="incExtra" checked> Somar estacionamento e estrada (combustível + pedágio)</label>
+      <div class="bars" id="bars"></div>
+      <div class="tbd" id="tbd"></div>
+    </div>
+    <div class="panel">
+      <h3>Distância de carro a partir da Av. Paulista</h3>
+      <p class="sub">Cada anel é um tempo de viagem sem trânsito pesado. Cada fatia é uma categoria. Clique num ponto para ver os detalhes.</p>
+      <div class="radar-wrap"><svg class="radar" id="radar" viewBox="0 0 640 640" role="img" aria-label="Diagrama de distância"></svg></div>
+    </div>
+  </div>
+</section>
+
+<section id="planejar">
+  <div class="sec-head">
+    <div><div class="eyebrow">Planejador</div><h2>Monte a sua semana</h2>
+    <p>Já vem preenchido com a minha sugestão. Troque à vontade: o total e o "quanto cada um vai curtir" se atualizam sozinhos, e o plano fica salvo neste navegador.</p></div>
+  </div>
+  <div class="plan">
+    <div class="plan-days" id="planDays"></div>
+    <aside class="summary" id="summary"></aside>
+  </div>
+</section>
+
+<section id="avisos">
+  <div class="sec-head"><div><div class="eyebrow">Antes de sair</div><h2>Avisos e pontos em aberto</h2></div></div>
+  <div class="notes" id="notes"></div>
+</section>
+
+<footer>
+  Pesquisa feita em 12/11/2026 em sites oficiais e guias (São Paulo para Crianças, Guia da Semana, Catraca Livre, Melhores Destinos, Fever, Ticketmaster). Preços e horários mudam: confira no link de cada lugar antes de comprar. Os tempos de carro são estimativas. Bibliotecas, Liberdade e Paulista: MASP, IMS, Pinacoteca, Museu Afro Brasil, Templo Zu Lai, BVL, Bunkyo, Prefeitura de SP e guias, em 12/11/2026. Fotos: sites oficiais e Wikimedia Commons, em alguns casos ilustrativas.
+</footer>
+</div>
+
+<dialog id="dlg"><div id="dlgBody"></div></dialog>
+
+<script>
+const DIAS=[
+ {dow:'Seg',d:16,wx:{c:80,max:25,min:19,p:100,mm:12.2}},
+ {dow:'Ter',d:17,wx:{c:51,max:27,min:18,p:31,mm:0.1}},
+ {dow:'Qua',d:18,wx:{c:51,max:30,min:18,p:64,mm:0.3}},
+ {dow:'Qui',d:19,wx:{c:51,max:30,min:20,p:80,mm:2.7}},
+ {dow:'Sex',d:20,hol:true,wx:{c:51,max:32,min:20,p:78,mm:0.3}},
+ {dow:'Sáb',d:21,wx:{c:95,max:33,min:22,p:71,mm:4.4}}
+];
+const CATS={
+ jogos:{n:'Jogos & arcade',c:'var(--l3)'},
+ museus:{n:'Museus & ciência',c:'var(--l1)'},
+ animais:{n:'Bichos',c:'var(--l2)'},
+ imersivo:{n:'Imersivo & alturas',c:'var(--l5)'},
+ parques:{n:'Parques & água',c:'var(--l4)',y:1},
+ cultura:{n:'Passeios & cultura',c:'var(--l10)'},
+ leitura:{n:'Bibliotecas & gibis',c:'var(--l7)'}
+};
+const REG={capital:'Capital','grande-sp':'Grande SP','bate-volta':'Bate-volta'};
+const COB={coberto:'Coberto','ar-livre':'Ao ar livre',misto:'Misto'};
+const WHO=[{k:'Vocês',c:'var(--l1)'},{k:'15 anos',c:'var(--l5)'},{k:'9 anos',c:'var(--l2)'}];
+const gm=q=>'https://www.google.com/maps/search/?api=1&query='+encodeURIComponent(q);
+
+/* dias: [seg16, ter17, qua18, qui19, sex20(feriado), sab21] → 1 abre · 0 fechado · 2 não confirmado */
+const P=[
+{id:'zoo',nome:'Zoológico de São Paulo',cat:'animais',reg:'capital',cidade:'Água Funda, SP',end:'Av. Miguel Estéfano, 4241',min:40,dias:[1,1,1,1,1,1],hor:'Seg–sex 9h–17h (entrada até 16h). Sáb e feriado 8h30–18h.',cob:'ar-livre',dur:'4 a 6 h',
+ custo:300,extra:55,preco:'Inteira R$ 99,90 comprando com 1 dia de antecedência (R$ 119,90 no dia). Até 3 anos não paga. Estacionamento R$ 55.',
+ fit:[[2,'Dia gostoso, mas cansa: muita caminhada'],[2,'Pode achar programa de criança, mas costuma curtir'],[3,'Vai amar']],
+ site:'https://www.zoologico.com.br',ing:'https://www.zoologico.com.br',dicas:'Compre online na véspera. Chegue na abertura. Fica no mesmo complexo do Simba Safari, então dá para fazer os dois no mesmo dia.'},
+{id:'simba',nome:'Simba Safari',cat:'animais',reg:'capital',cidade:'Vila Moraes, SP',end:'Av. do Cursino, 6338',min:35,dias:[1,1,1,1,1,1],hor:'Seg–sex 9h–17h. Sáb e feriado 8h30–17h. Sessões com horário marcado.',cob:'misto',dur:'1 a 2 h',
+ custo:316,extra:40,preco:'Inteira R$ 99 antecipado (R$ 119 no dia), meia R$ 59. Estacionamento R$ 40 nas 2 primeiras horas.',
+ fit:[[2,'Rápido e diferente: leão a poucos metros'],[2,'Ver leão de perto agrada até adolescente'],[3,'Caminhão no meio dos bichos, ela vai adorar']],
+ site:'https://ingressos.simbasafari.com.br',ing:'https://ingressos.simbasafari.com.br',dicas:'O passeio é de caminhão fechado, então funciona com chuva. Compre só no site oficial, porque há golpe por WhatsApp. O cupom MD15 (15%, Melhores Destinos) pode valer.',cupom:'MD15'},
+{id:'aquario',nome:'Aquário de São Paulo',cat:'animais',reg:'capital',cidade:'Ipiranga, SP',end:'R. Huet Bacelar, 407',min:30,dias:[1,1,1,1,1,1],hor:'Todos os dias, 9h–17h.',cob:'coberto',dur:'2 a 3 h',
+ custo:320,extra:0,preco:'As fontes divergem: de R$ 80 a R$ 150 por adulto. Segunda teria preço promocional (~R$ 90). Show das sereias R$ 20 à parte.',
+ fit:[[2,'Bom e coberto, ótimo para dia de garoa'],[2,'Tubarões e urso-polar seguram a atenção'],[3,'Na medida certa para 9 anos']],
+ site:'https://aquariodesp.com.br/',ing:'https://lojadoaquariodesp.com.br/',dicas:'Um dos poucos abertos na segunda. Evite o feriado, porque há relatos de superlotação. Fica perto do Museu do Ipiranga.',alerta:'Preço com informações conflitantes: confira na loja online.'},
+{id:'arena-pixel',nome:'Arena Pixel',cat:'jogos',reg:'capital',cidade:'Vila Madalena, SP',end:'Vila Madalena (endereço exato no site)',min:20,dias:[0,0,1,1,1,1],hor:'Qua e dom 10h–20h. Qui, sex, sáb e feriado 10h–22h. Fecha seg e ter.',cob:'coberto',dur:'2 a 3 h',
+ custo:269,extra:0,preco:'Circuito por pessoa: R$ 79 (qua), R$ 89 (qui), R$ 99 (sex a dom e feriado). Estimativa: 4 × R$ 79 com 15% do cupom GP15. Hub de jogos com entrada grátis.',
+ fit:[[3,'Vocês jogam junto, em time'],[3,'Desafios em equipe, a cara dos 15 anos'],[3,'Recomendado a partir de 8 anos, então ela já pode']],
+ site:'https://www.arenapixel.com.br/',ing:'https://www.arenapixel.com.br/',dicas:'Quarta é o dia mais barato. Reserve pelo site e chegue 10 min antes. Não pode levar comida.',cupom:'GP15',alerta:'Não achei a regra do cupom GP15 publicada: teste no checkout.'},
+{id:'bario',nome:'Bário Bar (fliperamas)',cat:'jogos',reg:'capital',cidade:'Pinheiros · Santo Amaro · Tatuapé',end:'R. Coropé, 41 (Pinheiros) · Av. Washington Luís, 1860 (Santo Amaro)',min:20,dias:[1,1,1,1,1,1],hor:'Seg 17h–22h · ter a qui 17h–0h · sex 17h–1h · sáb 12h–1h. Pinheiros abre 18h de ter a qui.',cob:'coberto',dur:'1h30 a 3 h',
+ custo:100,extra:45,preco:'Seg a qui: sem entrada, só os créditos que vocês gastarem. Sex, sáb e feriado: R$ 20 de entrada que vira R$ 20 em créditos. Até 11 anos não paga entrada. Manobrista R$ 40–45.',
+ fit:[[3,'Pinball e fliperama: nostalgia pura para vocês'],[3,'Arcade de verdade, ótimo para adolescente'],[2,'Diverte, mas algumas máquinas são grandes para ela']],
+ site:'https://www.bario.com.br',ing:'https://www.bario.com.br',dicas:'Aceita crianças acompanhadas. Vá cedo: em dia útil abre às 17h e à noite vira bar. Santo Amaro tem banheiro família.'},
+{id:'roller',nome:'Roller Dance / pista de patinação',cat:'jogos',reg:'grande-sp',cidade:'São Caetano do Sul (Roller Dancing)',end:'São Caetano do Sul · WhatsApp (11) 96333-5610',min:40,dias:[0,0,2,2,2,2],hor:'Dados antigos: qua a dom 16h–22h (sex até 23h).',cob:'coberto',dur:'1 a 3 h',
+ custo:200,extra:0,preco:'Dados de 2017: entrada R$ 25–30 + aluguel de patins com proteção R$ 20. Hoje deve ser mais caro.',
+ fit:[[2,'Divertido se toparem patinar junto'],[3,'Pista retrô com luzes e música, programa de adolescente'],[2,'Se nunca patinou, vai cair bastante (tem proteção)']],
+ site:gm('Roller Dancing São Caetano do Sul'),ing:'',dicas:'Candidatos com nome parecido: Roller Dancing (São Caetano), Roller Jam (Moema e Mooca) e Roller Boogie (shoppings). Confirme pelo WhatsApp antes.',alerta:'Não achei pista chamada exatamente "Roller Dance". Qual é a que você viu?'},
+{id:'arcade-haus',nome:'Arcade Haus',cat:'jogos',reg:'capital',cidade:'Chácara Sto. Antônio · Tatuapé',end:'R. Dr. Rubens Gomes Bueno, 288 · R. Euclides Pacheco, 483',min:40,dias:[0,0,1,1,1,1],hor:'Qua a sex 14h–22h · sáb 10h–22h · feriado 20/11 10h–22h. Fecha seg e ter.',cob:'coberto',dur:'1 a 1h30',
+ custo:236,extra:0,preco:'De R$ 39 a R$ 69 por pessoa, conforme o dia e o pacote. Estimativa: 4 × R$ 59. Precisa de meia antiderrapante.',
+ fit:[[2,'Jogos de corpo inteiro: vocês vão suar'],[3,'Fliperama imersivo e competitivo'],[3,'A partir de 8 anos, ela já curte']],
+ site:'https://www.arcadehaus.com.br',ing:'https://www.arcadehaus.com.br/ingressos',dicas:'Leve meia antiderrapante. Fica colado no PopHaus. O cupom do post (10%) não foi confirmado.'},
+{id:'pophaus',nome:'PopHaus (infláveis)',cat:'jogos',reg:'capital',cidade:'Tatuapé · Santo Amaro',end:'R. Euclides Pacheco, 483 (Tatuapé)',min:40,dias:[0,0,1,1,1,1],hor:'Qua e qui 13h–19h · sex 13h–20h · sáb e feriado 10h–20h.',cob:'coberto',dur:'1 h por sessão',
+ custo:218,extra:0,preco:'Brincante R$ 79 (semana) ou R$ 89 (fim de semana e feriado) por 1 h. Quem só acompanha paga R$ 30. Estimativa: 2 brincantes + 2 acompanhantes. Cupom SPCRIANCAS dá até 10%.',
+ fit:[[2,'Podem pular junto ou só assistir (R$ 30)'],[2,'Infláveis gigantes divertem, mas ela pode achar infantil'],[3,'Uma hora pulando sem parar']],
+ site:'https://www.pophaus.com.br',ing:'https://www.pophaus.com.br',dicas:'Os ingressos por horário são limitados. Dá para remarcar até 4h antes.',cupom:'SPCRIANCAS'},
+{id:'museu-imaginacao',nome:'Museu da Imaginação',cat:'museus',reg:'capital',cidade:'Água Branca, SP',end:'R. Virgílio Wey, 100',min:30,dias:[0,0,1,1,1,1],hor:'Qua a sex 9h–17h · sáb e feriado 9h–18h. Seg e ter provavelmente fecha.',cob:'coberto',dur:'3 a 5 h',
+ custo:360,extra:40,preco:'R$ 120 por pessoa. Combo de 4 ingressos: R$ 89,90 cada. Quarta costuma ter promoção (~R$ 69,90). Estacionamento conveniado R$ 40.',
+ fit:[[2,'Bem cuidado e coberto'],[1,'Feito para crianças menores: a de 15 tende a achar infantil'],[3,'Na medida para 9 anos']],
+ site:'https://www.museudaimaginacao.com.br',ing:'https://www.museudaimaginacao.com.br',dicas:'Quarta é o dia promocional e mais vazio. Bom plano para chuva.'},
+{id:'museu-ilusoes',nome:'Museu das Ilusões',cat:'museus',reg:'capital',cidade:'Shopping SP Market, SP',end:'Av. das Nações Unidas, 22540',min:45,dias:[0,1,1,1,1,1],hor:'Ter a sáb 10h–22h · dom e feriado 12h–20h. Seg provavelmente fecha.',cob:'coberto',dur:'1h30 a 2 h',
+ custo:180,extra:25,preco:'Inteira R$ 90, meia R$ 45. Grupo de 3 ou mais paga meia: 4 × R$ 45.',
+ fit:[[2,'Rápido e divertido'],[3,'Rende muita foto para as redes'],[3,'Ilusões que ela vai querer mostrar para todo mundo']],
+ site:'https://museudasilusoes.com.br',ing:'https://bileto.sympla.com.br/event/104934/d/312201',dicas:'Com 4 pessoas todo mundo paga meia. Fica aberto até 22h, ótimo para fim de tarde chuvoso.'},
+{id:'catavento',nome:'Museu Catavento',cat:'museus',reg:'capital',cidade:'Parque Dom Pedro II, SP',end:'Av. Mercúrio, s/n (Palácio das Indústrias)',min:25,dias:[0,1,1,1,1,1],hor:'Ter a dom 9h–17h (bilheteria até 16h).',cob:'coberto',dur:'3 a 4 h',
+ custo:60,extra:30,preco:'Inteira R$ 20, meia R$ 10. Terça é grátis. Estacionamento R$ 30 por 4 h.',
+ fit:[[2,'Barato e bem feito'],[2,'Tem partes de ciência boas para os 15'],[3,'Experimentos de pôr a mão em tudo']],
+ site:'https://museucatavento.org.br',ing:'https://megapass.com.br/catavento/eventos',dicas:'Terça grátis lota: chegue cedo ou vá na quarta ou quinta. Atrações com senha em fim de semana e feriado.'},
+{id:'biologico',nome:'Museu do Instituto Biológico',cat:'museus',reg:'capital',cidade:'Vila Mariana, SP',end:'Av. Dr. Dante Pazzanese, 64',min:15,dias:[0,1,1,1,2,1],hor:'Ter a dom 9h–16h.',cob:'coberto',dur:'1 a 1h30',
+ custo:0,extra:0,preco:'Grátis, e o estacionamento também.',
+ fit:[[2,'Rápido, grátis e perto'],[1,'Curto e simples para os 15'],[3,'Insetos gigantes e corrida de baratas']],
+ site:gm('Museu do Instituto Biológico São Paulo'),ing:'',dicas:'Combina com o Ibirapuera ou o Planetário, que ficam ao lado. Não entra comida.'},
+{id:'museu-futebol',nome:'Museu do Futebol',cat:'museus',reg:'capital',cidade:'Pacaembu, SP',end:'Praça Charles Miller, s/n',min:15,dias:[0,1,1,1,2,1],hor:'Ter a dom 9h–18h (entrada até 17h).',cob:'coberto',dur:'2 a 3 h',nova:1,
+ custo:72,extra:0,preco:'Inteira R$ 24, meia R$ 12. Até 7 anos não paga. Terça pode ser grátis com reserva (confirmar).',
+ fit:[[3,'Muito bem montado e interativo'],[2,'Depende do quanto ela gosta de futebol'],[2,'Chutes a gol e telas interativas']],
+ site:'https://museudofutebol.org.br',ing:'https://museudofutebol.org.br',dicas:'Promoção de 50% combinada com o Museu da Língua Portuguesa até 30/12.'},
+{id:'museu-lingua',nome:'Museu da Língua Portuguesa',cat:'museus',reg:'capital',cidade:'Luz, SP',end:'Praça da Luz, s/n',min:30,dias:[0,1,1,1,2,1],hor:'Ter a dom 9h–16h30 (permanência até 18h).',cob:'coberto',dur:'2 h',nova:1,
+ custo:null,extra:0,preco:'Preço não confirmado. Há 50% de desconto combinado com o Museu do Futebol.',
+ fit:[[3,'Lindo, na Estação da Luz'],[3,'Multimídia e jogos de palavras, bom para os 15'],[2,'Parte da exposição é mais para leitores grandes']],
+ site:'https://www.museudalinguaportuguesa.org.br',ing:'https://www.museudalinguaportuguesa.org.br/visite/',dicas:'Vá de metrô (estação Luz). Fica perto do Catavento.'},
+{id:'museu-ipiranga',nome:'Museu do Ipiranga',cat:'museus',reg:'capital',cidade:'Ipiranga, SP',end:'R. dos Patriotas, 100',min:30,dias:[0,1,1,1,2,1],hor:'Ter a dom 10h–17h (última entrada 16h).',cob:'misto',dur:'2 a 3 h',nova:1,
+ custo:null,extra:0,preco:'Quarta 18/11 é grátis, com ingresso retirado na bilheteria (abre 10h). Outros dias: preço não confirmado.',
+ fit:[[3,'Museu renovado e jardins bonitos'],[2,'História do Brasil, depende do interesse'],[2,'Jardins para correr depois']],
+ site:'https://museudoipiranga.org.br',ing:'https://museudoipiranga.org.br/en/visit/',dicas:'Combina com o Aquário, a 5 min. Na quarta grátis chegue antes das 10h.'},
+{id:'planetario',nome:'Planetário do Ibirapuera',cat:'museus',reg:'capital',cidade:'Parque Ibirapuera, SP',end:'Av. Pedro Álvares Cabral, portão 10',min:20,dias:[0,0,0,2,2,2],hor:'Sessões de quinta ou sexta a domingo. Grade de novembro não confirmada.',cob:'coberto',dur:'1 h + parque',nova:1,
+ custo:108,extra:0,preco:'Em jul/2026: inteira R$ 36, meia R$ 18. Novembro não confirmado.',
+ fit:[[2,'Cúpula bonita, sessão curta'],[2,'Depende da sessão'],[3,'Sessões infantis feitas para a idade dela']],
+ site:'https://www.instagram.com/planetarioibirapuera/',ing:'',dicas:'Confira a grade no Instagram. O ar-condicionado é forte, leve casaco.'},
+{id:'dopamine',nome:'Dopamine Land',cat:'imersivo',reg:'capital',cidade:'Shopping Eldorado, SP',end:'Av. Rebouças, 3970 (3º piso)',min:20,dias:[0,1,1,1,2,1],hor:'Ter a sex 12h–21h · sáb 10h–21h · dom 11h–20h. Prorrogado até 29/11.',cob:'coberto',dur:'1 h',
+ custo:204,extra:20,preco:'A partir de R$ 60 por pessoa. Estimativa: 4 × R$ 60 com 15% do cupom DOPMNEXFEV (vale até 20/11, máximo 4 ingressos).',
+ fit:[[2,'Bonito e rápido'],[3,'Salas multissensoriais muito fotogênicas'],[3,'Piscina de bolinhas e luzes']],
+ site:'https://feverup.com/m/304411',ing:'https://feverup.com/m/304411',dicas:'O cupom do post (ASDICASDAPRI10) não foi confirmado. Use o DOPMNEXFEV. Fica a 10 min da Arena Pixel.',cupom:'DOPMNEXFEV'},
+{id:'machu-picchu',nome:'Machu Picchu em realidade virtual',cat:'imersivo',reg:'capital',cidade:'Galeria Extra Morumbi, SP',end:'Av. Maj. Sylvio de Magalhães Padilha, 16741',min:40,dias:[2,2,2,2,2,2],hor:'Temporada até 22/11. Sessões de 20 em 20 min, 12h–21h (confirmar dias na Fever).',cob:'coberto',dur:'~1 h',
+ custo:296,extra:0,preco:'Inteira R$ 89, meia R$ 44,50. Grupo de 4: R$ 74 por pessoa. Estacionamento grátis.',
+ fit:[[3,'Viagem virtual de 45 min, experiência rara'],[3,'Realidade virtual de verdade'],[2,'Mínimo 8 anos e com adulto. Pode achar longo']],
+ site:'https://machupicchuexp.com/sao-paulo/',ing:'https://feverup.com/m/478686',dicas:'Última semana em SP. Sem reembolso. Horário marcado, então funciona bem no feriado.',alerta:'Termina em 22/11: se interessar, compre já.'},
+{id:'sampa-sky',nome:'Sampa Sky (mirante de vidro)',cat:'imersivo',reg:'capital',cidade:'Centro, SP',end:'Praça Pedro Lessa, 110 (Ed. Mirante do Vale)',min:20,dias:[0,1,1,1,1,1],hor:'Ter a sex 11h–18h30 · sáb e feriado 9h–19h · dom 9h–17h.',cob:'misto',dur:'~1 h',
+ custo:180,extra:30,preco:'O site não mostra o preço. O post falava em "a partir de R$ 60". Estimativa: 2 × R$ 60 + 2 meias.',
+ fit:[[3,'Vista do centro a 150 m de altura'],[3,'Foto no piso de vidro'],[2,'Pode ter medo do vidro']],
+ site:'https://www.sampasky.com.br',ing:'https://www.ticketmaster.com.br/event/sampasky',dicas:'Precisa de céu aberto: terça é o melhor dia da semana. Pôr do sol perto das 18h30.'},
+{id:'roda-rico',nome:'Roda Rico (roda-gigante)',cat:'imersivo',reg:'capital',cidade:'Villa-Lobos, SP',end:'Av. Queiroz Filho, 1365',min:30,dias:[0,1,1,1,2,1],hor:'Ter a sex 12h–19h30 · sáb e dom 10h–19h30. Fecha seg.',cob:'misto',dur:'30 min + parque',
+ custo:240,extra:0,preco:'Inteira ~R$ 80, meia ~R$ 40. Ingresso social R$ 60 com 1 kg de alimento. Online sai mais barato.',
+ fit:[[2,'Vista bonita da Marginal'],[2,'Legal, mas passa rápido'],[3,'91 m de altura, a maior do Brasil']],
+ site:'https://www.rodarico.com.br',ing:'https://www.ticketmaster.com.br/event/roda-rico',dicas:'Com chuva forte ou vento pode parar. Combina com o Parque Villa-Lobos e a Casa de Cultura do Parque, em frente.'},
+{id:'thermas',nome:'Thermas da Mata',cat:'parques',reg:'bate-volta',cidade:'Cotia',end:'Estrada Morro Grande, 3000, Jardim Ísis',min:70,dias:[0,0,2,2,2,2],hor:'10h–17h nos dias de parque aberto. Calendário de 16 a 21/11 não confirmado.',cob:'ar-livre',dur:'Dia inteiro',
+ custo:200,extra:85,preco:'Preço dinâmico: de R$ 29,90 a R$ 49,90 por pessoa em 2026. Estacionamento pago. Estrada ~R$ 55.',
+ fit:[[2,'Bom se fizer sol'],[3,'Toboáguas radicais'],[3,'Área infantil e piscina de ondas']],
+ site:'https://thermasdamata.com.br',ing:'https://ingressos.thermasdamata.com.br/',dicas:'O cupom DICASDAPRI10 não foi confirmado. Com a chuva prevista, só vale a pena se a previsão melhorar.',alerta:'Dias de abertura não confirmados, e chove quase todos os dias da semana.'},
+{id:'animalia',nome:'Animália Park',cat:'animais',reg:'bate-volta',cidade:'Cotia',end:'Rod. Raposo Tavares, km 39',min:70,dias:[0,2,2,2,2,2],hor:'Reserva 9h–17h · diversão 10h30–18h (19h30 fim de semana). Dias da semana não confirmados.',cob:'ar-livre',dur:'Dia inteiro',
+ custo:480,extra:55,preco:'Promoção recente: R$ 120 por pessoa (reserva + forest), com data marcada. Brinquedos indoor, tirolesa e estacionamento à parte.',
+ fit:[[2,'Dia completo, mas caro'],[2,'Tem radicais, mas o foco é criança'],[3,'Bichos e brinquedos no mesmo lugar']],
+ site:'https://www.animaliapark.com.br',ing:'https://www.animaliapark.com.br',dicas:'O ingresso não vale no dia da compra. Telefone (11) 5197-8000.',alerta:'Reclamações recentes sobre estorno: leia as regras antes de comprar.'},
+{id:'maeda',nome:'Parque Maeda (colher morango)',cat:'parques',reg:'bate-volta',cidade:'Itu',end:'Rod. Dep. Archimedes Lammoglia, km 18',min:90,dias:[0,0,0,0,2,2],hor:'Lazer só em fim de semana, feriado e férias. Pesqueiro todos os dias.',cob:'misto',dur:'Meio dia',
+ custo:null,extra:145,preco:'Rodízio de morango cobrado por pessoa, valor não publicado. Estrada ~R$ 145 (combustível + pedágio).',
+ fit:[[3,'Colher morango no pé é programa raro'],[2,'Rende fotos, mas depende do humor'],[3,'Colher e comer na hora']],
+ site:'https://www.parquemaeda.com.br',ing:'https://www.parquemaeda.com.br/vendas-online',dicas:'A colheita é em estufa, então aguenta garoa. Combina com a Cidade das Crianças, na mesma cidade.',alerta:'Morango em novembro não confirmado: ligue antes, (11) 2118-6200.'},
+{id:'cidade-criancas',nome:'Cidade das Crianças',cat:'parques',reg:'bate-volta',cidade:'Itu',end:'R. França, 102',min:80,dias:[2,1,1,1,1,1],hor:'Ter a dom 8h–16h45 (segundo o post). Um guia cita segunda 10h–17h.',cob:'ar-livre',dur:'1 a 2 h',
+ custo:0,extra:145,preco:'Grátis. Custo só de estrada (~R$ 145 ida e volta).',
+ fit:[[1,'Para vocês é um parquinho grande'],[1,'Feita para até 10 anos: ela provavelmente vai se entediar'],[2,'Ainda curte, mas está no limite (foguete para 7 a 10)']],
+ site:gm('Cidade das Crianças Itu R. França 102'),ing:'',dicas:'Leve lanche para piquenique. Só vale a pena junto com o Parque Maeda, no mesmo dia.',alerta:'Guias citam falta de manutenção. A última reforma conhecida é de 2015.'},
+{id:'tarundu',nome:'Parque Tarundu',cat:'parques',reg:'bate-volta',cidade:'Campos do Jordão',end:'Av. José Antônio Manso, 1515',min:180,dias:[2,2,2,2,2,2],hor:'9h–17h (dias não listados no site).',cob:'misto',dur:'Dia inteiro',
+ custo:464,extra:240,preco:'Entrada R$ 66 + atividades pagas à parte (estimei R$ 50 por pessoa). Passaporte ilimitado R$ 579. Estrada ~R$ 240.',
+ fit:[[3,'Serra, frio e natureza'],[3,'Tirolesa de 800 m, trenó e patinação no gelo'],[3,'Muita atividade para a idade dela']],
+ site:'https://www.tarundu.com.br',ing:'https://ecommerce.tarundu.com.br/',dicas:'Vale mais dormindo uma noite em Campos. Leve agasalho.',alerta:'São 2h30 a 3h30 de estrada para cada lado: muito puxado para ir e voltar no mesmo dia.'},
+{id:'hopi-hari',nome:'Hopi Hari (Natal Magiko)',cat:'parques',reg:'bate-volta',cidade:'Vinhedo',end:'Rod. dos Bandeirantes, km 72',min:80,dias:[0,0,0,1,1,1],hor:'Qui a dom e feriado, 11h–19h30.',cob:'ar-livre',dur:'Dia inteiro',nova:1,
+ custo:540,extra:120,preco:'R$ 135 por pessoa comprando antes (R$ 250 na bilheteria). Estrada ~R$ 120. Em 2025 crianças até 12 entravam grátis em fins de semana de novembro (2026 não confirmado).',
+ fit:[[3,'Dia de parque com a família toda'],[3,'Montanhas-russas: a de 15 vai amar'],[3,'Brinquedos infantis e Natal']],
+ site:'https://www.hopihari.com.br',ing:'https://www.hopihari.com.br',dicas:'Quinta 19 é o único dia útil aberto, com fila bem menor que no feriado. Telefone (11) 4210-4000.',alerta:'Previsão de pancadas na quinta: decida na véspera.'},
+{id:'wet-n-wild',nome:"Wet'n Wild",cat:'parques',reg:'bate-volta',cidade:'Itupeva',end:'Rod. dos Bandeirantes, km 72',min:80,dias:[2,2,2,2,2,2],hor:'Em 2025: qui a seg, 11h–17h. Novembro de 2026 não confirmado.',cob:'ar-livre',dur:'Dia inteiro',nova:1,
+ custo:382,extra:120,preco:'Promo de jun/2026: R$ 99 (11 anos ou mais) e R$ 85 (2 a 10 anos). Estrada ~R$ 120.',
+ fit:[[2,'Bom se fizer calor'],[3,'Toboáguas grandes'],[3,'Muita atração aquática']],
+ site:'https://www.wetnwild.com.br',ing:'https://wetshop.wetnwild.com.br',dicas:'Ligue antes: (11) 4496-8000.',alerta:'Dias de abertura não confirmados, e a semana tem chuva prevista.'},
+{id:'capivari',nome:'Parque Capivari',cat:'parques',reg:'bate-volta',cidade:'Campos do Jordão',end:'R. Eng. Diogo José de Carvalho, 1291',min:170,dias:[1,1,1,1,1,1],hor:'Todos os dias, 9h–21h (sex e sáb até 22h).',cob:'ar-livre',dur:'Dia inteiro',nova:1,
+ custo:null,extra:240,preco:'Entrada grátis, paga por atração: trenó a partir de R$ 90, roda-gigante R$ 70, teleférico R$ 30–60. Estrada ~R$ 240.',
+ fit:[[3,'Clima de serra, chocolate quente'],[2,'Legal, mas tudo é pago à parte'],[3,'Trenó de montanha e roda-gigante']],
+ site:'https://parquecapivari.com.br',ing:'https://parquecapivari.com.br',dicas:'Como o Tarundu, rende mais dormindo lá.',alerta:'Longe para ir e voltar no mesmo dia.'},
+{id:'ibirapuera',nome:'Parque Ibirapuera',cat:'parques',reg:'capital',cidade:'Vila Mariana, SP',end:'Av. Pedro Álvares Cabral, s/n',min:20,dias:[1,1,1,1,1,1],hor:'Todos os dias.',cob:'ar-livre',dur:'2 a 4 h',nova:1,
+ custo:0,extra:0,preco:'Grátis.',
+ fit:[[2,'Bicicleta e piquenique'],[2,'Bom para patins e bike'],[2,'Gramado e parquinho']],
+ site:'https://www.ibirapuera.org',ing:'',dicas:'A Villa de Natal só abre em 27/11. Combine com o Planetário ou o Instituto Biológico.'},
+{id:'ecologico-tiete',nome:'Parque Ecológico do Tietê',cat:'parques',reg:'capital',cidade:'Zona Leste, SP',end:'Núcleo Engenheiro Goulart',min:50,dias:[1,1,1,1,1,1],hor:'Diário (8h–17h, segundo as fontes). Maria Fumaça só em fim de semana e feriado.',cob:'ar-livre',dur:'Meio dia',nova:1,
+ custo:0,extra:0,preco:'Grátis. Maria Fumaça a partir de R$ 5.',
+ fit:[[2,'Natureza sem gastar'],[1,'Pouca coisa para 15 anos'],[2,'Trenzinho, pedalinho e bicicleta']],
+ site:'https://semil.sp.gov.br',ing:'',dicas:'Não tem mais piscina. Leve repelente.'},
+{id:'natal-ibirapuera-shop',nome:'Natal no Ibirapuera Shopping',cat:'cultura',reg:'capital',cidade:'Moema, SP',end:'Av. Ibirapuera, 3103',min:25,dias:[1,1,1,1,1,1],hor:'Horário do shopping. Decoração "Natal de Ouro" até 24/12.',cob:'coberto',dur:'1 a 2 h',nova:1,
+ custo:0,extra:20,preco:'Grátis para ver a decoração. Foto com Papai Noel: preço não confirmado.',
+ fit:[[2,'Programa leve para um fim de tarde'],[1,'Decoração de Natal empolga pouco aos 15'],[2,'Papai Noel e decoração']],
+ site:'https://www.ibirapuera.com.br',ing:'',dicas:'Bom para o fim do dia depois de outro passeio.'},
+{id:'casa-cultura-parque',nome:'Casa de Cultura do Parque',cat:'cultura',reg:'capital',cidade:'Alto de Pinheiros, SP',end:'Av. Prof. Fonseca Rodrigues, 1300',min:30,dias:[0,0,1,1,2,1],hor:'Qua a dom 11h–18h. Oficina de tecelagem sáb 21/11, 11h30–13h30.',cob:'coberto',dur:'1 a 2 h',nova:1,
+ custo:0,extra:0,preco:'Grátis. Oficinas com 15 vagas e senha 15 min antes.',
+ fit:[[2,'Exposições novas (abrem 14/11)'],[1,'Pouco atrativo para os 15'],[2,'Oficina de tecelagem no sábado']],
+ site:'https://catracalivre.com.br/gira/casa-de-cultura-do-parque-abre-novas-mostras-de-arte-e-oficinas-gratuitas-em-novembro/',ing:'',dicas:'Fica em frente ao Villa-Lobos e à Roda Rico.'},
+{id:'embu',nome:'Feira de Embu das Artes',cat:'cultura',reg:'grande-sp',cidade:'Embu das Artes',end:'Largo 21 de Abril, Centro',min:50,dias:[0,0,0,0,1,1],hor:'Sáb, dom e feriado, 9h–18h.',cob:'ar-livre',dur:'Meio dia',nova:1,
+ custo:0,extra:35,preco:'Grátis. Estrada ~R$ 35 + estacionamento.',
+ fit:[[3,'Artesanato, casario e comida'],[1,'Feira de artesanato raramente empolga adolescente'],[1,'Pouca coisa para criança']],
+ site:gm('Feira de Artes Embu das Artes'),ing:'',dicas:'No feriado chegue antes das 11h para achar vaga.'},
+{id:'paranapiacaba',nome:'Vila de Paranapiacaba',cat:'cultura',reg:'bate-volta',cidade:'Santo André',end:'Vila de Paranapiacaba',min:70,dias:[0,0,0,0,1,1],hor:'Museus sáb, dom e feriado, 10h–16h.',cob:'misto',dur:'Meio dia',nova:1,
+ custo:40,extra:65,preco:'Museu Funicular R$ 10 por pessoa. Estrada ~R$ 65.',
+ fit:[[3,'Vila inglesa na neblina'],[2,'Bonita para fotos'],[2,'Trem e funicular']],
+ site:gm('Vila de Paranapiacaba'),ing:'',dicas:'Neblina e garoa são comuns: leve agasalho e tênis.'},
+{id:'holambra',nome:'Holambra e Moinho',cat:'cultura',reg:'bate-volta',cidade:'Holambra',end:'Moinho Povos Unidos',min:115,dias:[2,2,2,2,2,2],hor:'Moinho 10h–17h (os dias variam entre as fontes).',cob:'ar-livre',dur:'Dia inteiro',nova:1,
+ custo:null,extra:200,preco:'Preço não confirmado. Estrada ~R$ 200.',
+ fit:[[3,'Cidade das flores, passeio tranquilo'],[2,'Bonita, mas calma demais'],[2,'Moinho e flores']],
+ site:'https://holambra.sp.gov.br',ing:'',dicas:'A Expoflora é em setembro, então agora não tem evento grande.',alerta:'Longe para pouca atração nessa época.'},
+{id:'zoo-sorocaba',nome:'Zoológico de Sorocaba',cat:'animais',reg:'bate-volta',cidade:'Sorocaba',end:'R. Theodoro Kaisel, 883',min:100,dias:[0,1,1,1,2,1],hor:'Ter a dom, até 16h ou 17h.',cob:'ar-livre',dur:'3 h',nova:1,
+ custo:24,extra:150,preco:'R$ 4 a R$ 8 por pessoa. Estrada ~R$ 150.',
+ fit:[[2,'Barato e bem cuidado'],[1,'Menor que o Zoo SP'],[3,'Bichos de perto']],
+ site:'https://sorocaba.sp.gov.br',ing:'',dicas:'A estrada custa mais que o ingresso. Só compensa se houver outro motivo para ir a Sorocaba.'},
+{id:'liberdade',nome:'Passeio a pé na Liberdade',cat:'cultura',reg:'capital',cidade:'Liberdade, SP',end:'Praça da Liberdade, s/n',min:12,dias:[1,1,1,1,1,1],hor:'O bairro abre todo dia. Feira só sáb e dom. Museu da Imigração ter a dom 10h–17h. Domingo e feriado as ruas principais são só para pedestres.',cob:'misto',dur:'4 a 6 h',nova:1,walk:1,
+ custo:74,extra:50,preco:'Passear é grátis. Museu da Imigração: 2 × R$ 25 + 2 × R$ 12 = R$ 74 (grátis na quarta). Estacionamento estimado em R$ 50. Comida à parte.',
+ fit:[[3,'Comida japonesa, museu e a história do bairro'],[3,'Lojas de anime, mangá, papelaria e a Daiso'],[3,'Taiyaki, Daiso e as lanternas vermelhas']],
+ site:'https://www.bunkyo.org.br/museu',ing:'',dicas:'Roteiro com 9 paradas na seção "Liberdade a pé". Leve dinheiro. A Gibiteca do CCSP fica a uma estação de metrô.'},
+{id:'zulai',nome:'Templo Zu Lai (budista)',cat:'cultura',reg:'grande-sp',cidade:'Cotia',end:'Estrada Municipal Fernando Nobre, 1461 (km 28,5 da Raposo Tavares)',min:45,dias:[0,1,1,1,1,1],hor:'Ter a sex 12h–17h · sáb, dom e feriados 9h30–17h. Fecha seg. Sex 20/11 (feriado): aberto 9h30–17h, confirmado no site.',cob:'misto',dur:'2 a 3 h',nova:1,
+ custo:0,extra:40,preco:'Entrada e estacionamento grátis. Estimei R$ 40 de combustível, ida e volta (~70 km); pedágio não incluído.',
+ fit:[[3,'Maior templo budista da América Latina: arquitetura chinesa, jardins e silêncio'],[2,'Rende fotos lindas, mas é um programa contemplativo'],[2,'Leões de pedra, as estátuas e o lago chamam a atenção; precisa de silêncio']],
+ site:'https://templozulai.org.br',ing:'',dicas:'Um guia diz que o restaurante vegetariano serve almoço até 14h30 e que a cafeteria vende pão chinês e yakissoba à tarde (não confirmado no site). No feriado abre às 9h30: chegue cedo para almoçar lá. Telefone (11) 3500-3600.',alerta:'Regras do templo: nada de bermuda, short, regata ou decote; não pode levar comida nem fazer piquenique; não fotografe dentro das salas sem autorização; silêncio na sala de cerimônias.'},
+{id:'masp',nome:'MASP',cat:'museus',reg:'capital',cidade:'Paulista, SP',end:'Av. Paulista, 1578',min:5,dias:[0,1,1,1,1,1],hor:'Ter 10h–20h · qua a dom 10h–18h · sex 10h–21h. Abre em feriado (menos segunda). Fecha seg.',cob:'coberto',dur:'2 h',nova:1,
+ custo:0,extra:30,preco:'Grátis na terça, o dia todo, com reserva online, e na sexta das 18h às 21h. Nos outros dias: inteira R$ 85, meia R$ 42, até 10 anos não paga (R$ 212 para os 4). Estacionamento estimado em R$ 30.',
+ fit:[[3,'Acervo famoso (Van Gogh, Renoir, Portinari) e o vão livre'],[2,'Os cavaletes de vidro e as exposições temporárias rendem'],[2,'Até 10 anos não paga; visita curta funciona melhor']],
+ site:'https://masp.org.br/visite',ing:'https://masp.org.br/visite',dicas:'Reserve a terça grátis com antecedência no site. Do outro lado da avenida fica o Parque Trianon.'},
+{id:'itau-cultural',nome:'Itaú Cultural',cat:'museus',reg:'capital',cidade:'Paulista, SP',end:'Av. Paulista, 149',min:5,dias:[0,1,1,1,1,1],hor:'Ter a sáb 11h–20h · dom e feriado 11h–19h (segundo guias). Fecha seg.',cob:'coberto',dur:'1 h',nova:1,
+ custo:0,extra:30,preco:'Sempre grátis. Estacionamento estimado em R$ 30.',
+ fit:[[2,'Exposições de arte e cultura brasileira, sempre grátis'],[2,'Depende da exposição: veja a programação'],[2,'Depende da exposição em cartaz']],
+ site:'https://www.itaucultural.org.br',ing:'',dicas:'Ao lado do metrô Brigadeiro. Fica perto da Japan House e da Casa das Rosas.'},
+{id:'ims-paulista',nome:'IMS Paulista (Instituto Moreira Salles)',cat:'museus',reg:'capital',cidade:'Paulista, SP',end:'Av. Paulista, 2424',min:5,dias:[0,1,1,1,1,1],hor:'Ter a dom e feriados 10h–20h. Fecha seg (site oficial).',cob:'coberto',dur:'1 h',nova:1,
+ custo:0,extra:30,preco:'Entrada grátis (não vi preço no site). Estacionamento estimado em R$ 30.',
+ fit:[[3,'Exposições de fotografia e a vista da Paulista do alto do prédio'],[2,'Fotografia costuma agradar quem vive no celular'],[1,'Pouca coisa pensada para criança']],
+ site:'https://ims.com.br/ims-paulista/',ing:'',dicas:'Perto do metrô Consolação e do Conjunto Nacional.'},
+{id:'japan-house',nome:'Japan House',cat:'cultura',reg:'capital',cidade:'Paulista, SP',end:'Av. Paulista, 52',min:5,dias:[0,1,1,1,1,1],hor:'Ter a sex 10h–18h · sáb, dom e feriado 10h–19h. Fecha seg, mesmo em feriado.',cob:'coberto',dur:'1 h',nova:1,
+ custo:0,extra:30,preco:'Entrada grátis. Estacionamento estimado em R$ 30.',
+ fit:[[3,'Design e cultura japonesa atual, fachada de madeira de Kengo Kuma'],[3,'Exposições e loja de design japonês'],[2,'Bonita e rápida; combina com a Liberdade']],
+ site:'https://www.japanhousesp.com.br',ing:'',dicas:'Boa dupla com a Liberdade no mesmo dia (15 min de carro).'},
+{id:'pinacoteca',nome:'Pinacoteca de São Paulo',cat:'museus',reg:'capital',cidade:'Luz, SP',end:'Praça da Luz, 2',min:20,dias:[1,0,1,1,2,1],hor:'Qua a seg 10h–18h, última entrada 17h. Fecha ter (site oficial). Feriado não confirmado.',cob:'coberto',dur:'2 a 3 h',nova:1,
+ custo:0,extra:25,preco:'Ingresso pago nos dias úteis; não achei o preço de 2026. Guias dizem que é grátis aos sábados. Estacionamento estimado em R$ 25.',
+ fit:[[3,'Um dos principais museus do país, prédio histórico e jardim de esculturas'],[2,'A Pina Contemporânea tem videoarte e obras grandes'],[2,'O jardim e as esculturas ajudam; o acervo clássico cansa']],
+ site:'https://pinacoteca.org.br',ing:'https://pinacoteca.org.br',dicas:'Abre na segunda, quando quase tudo fecha. Fica em frente à Estação da Luz e ao lado do Museu da Língua Portuguesa.',alerta:'Sábado grátis e preço dos outros dias não confirmados: veja no site antes.'},
+{id:'museu-afro',nome:'Museu Afro Brasil',cat:'museus',reg:'capital',cidade:'Ibirapuera, SP',end:'Parque Ibirapuera, portão 10',min:15,dias:[0,1,1,1,2,1],hor:'Ter a dom 10h–17h (permanência até 18h). Fecha seg. Feriado não informado: (11) 3320-8900.',cob:'coberto',dur:'2 h',nova:1,
+ custo:0,extra:20,preco:'Grátis às quartas. Nos outros dias: inteira R$ 15, meia R$ 7,50 (R$ 45 para os 4). Estacionamento estimado em R$ 20.',
+ fit:[[3,'Arte e história afro-brasileira, num prédio de Niemeyer no Ibirapuera'],[3,'Tema forte para a semana da Consciência Negra'],[2,'Peças grandes e coloridas; visita longa cansa']],
+ site:'https://museuafrobrasil.org.br/planeje-sua-visita',ing:'',dicas:'Em 20/11/2025 houve festival grátis no museu; o de 2026 não foi anunciado. Combina com o Planetário e o parque.'},
+{id:'museu-zoologia',nome:'Museu de Zoologia da USP',cat:'museus',reg:'capital',cidade:'Ipiranga, SP',end:'Av. Nazaré, 481',min:25,dias:[0,1,1,1,2,1],hor:'Ter a dom 10h–17h, última entrada 16h30 (prefeitura, jun/2026). Guias antigos dizem qua a dom.',cob:'coberto',dur:'1h30',nova:1,
+ custo:0,extra:20,preco:'Grátis. Estacionamento estimado em R$ 20.',
+ fit:[[2,'Acervo científico num prédio histórico'],[2,'Esqueletos e o crânio de tigre-dentes-de-sabre'],[3,'Bichos, esqueletos e fósseis de perto']],
+ site:'https://mz.usp.br',ing:'',dicas:'Na quarta 18 dá para juntar com o Museu do Ipiranga, grátis nesse dia e bem perto. Mochila fica no guarda-volumes.'},
+{id:'theatro-municipal',nome:'Theatro Municipal (visita guiada)',cat:'cultura',reg:'capital',cidade:'Centro, SP',end:'Praça Ramos de Azevedo, s/n',min:15,dias:[0,1,1,1,0,2],hor:'Ter 10h, 11h e 17h · qua a sex 11h, 13h, 15h e 17h. Sem visita em feriado. Sábado não confirmado.',cob:'coberto',dur:'1h15',nova:1,
+ custo:0,extra:30,preco:'Grátis, com reserva. Estacionamento estimado em R$ 30.',
+ fit:[[3,'Salão, escadaria e vitrais do teatro de 1911'],[2,'Bonito, mas a visita dura 1h15'],[1,'Visita longa para 9 anos']],
+ site:'https://theatromunicipal.org.br',ing:'',dicas:'Reserve antes no site do teatro. Fica perto da Biblioteca Mário de Andrade.',alerta:'Horários de uma reportagem de abril de 2026: confirme no site.'},
+{id:'butantan',nome:'Instituto Butantan (Parque da Ciência)',cat:'animais',reg:'capital',cidade:'Butantã, SP',end:'Av. Vital Brasil, 1500',min:25,dias:[2,1,1,1,2,1],hor:'Parque todo dia 7h–17h. Os museus costumam abrir de ter a dom (não confirmado).',cob:'misto',dur:'2 a 3 h',nova:1,
+ custo:null,extra:20,preco:'Parque grátis. Os museus (Biológico, Microbiologia e Histórico) cobram ingresso único, entre R$ 6 e R$ 10 segundo guias; preço de 2026 não publicado.',
+ fit:[[2,'Ciência, história das vacinas e o parque'],[2,'Serpentes vivas e o laboratório histórico'],[3,'Serpentes, aranhas e escorpiões de perto']],
+ site:'https://butantan.gov.br',ing:'',dicas:'Não confunda com o Museu do Instituto Biológico, que já está na lista. Aqui ficam as serpentes.'},
+{id:'expo-consciencia',nome:'Expo Internacional Dia da Consciência Negra',cat:'cultura',reg:'capital',cidade:'Centro, SP',end:'Praça das Artes, Av. São João, 281',min:15,dias:[0,0,0,0,1,1],hor:'Sex 20 e sáb 21, horário ainda não publicado.',cob:'misto',dur:'2 h',nova:1,
+ custo:0,extra:30,preco:'Grátis (prefeitura). Estacionamento estimado em R$ 30; de metrô, estação Anhangabaú.',
+ fit:[[3,'Palestras, shows, desfile de moda afro e feira de afroempreendedores'],[2,'Música, moda e dança'],[2,'Dança e comida; pode ficar cheio']],
+ site:'https://prefeitura.sp.gov.br/w/prefeitura-promove-6%C2%AA-expo-internacional-dia-da-consci%C3%AAncia-negra-na-pra%C3%A7a-das-artes-em-20-e-21-de-novembro',ing:'',dicas:'Tema de 2026: "Mulheres Negras: raízes que sustentam o futuro". Fica a 5 min a pé do Theatro Municipal.'},
+{id:'gibiteca',nome:'Gibiteca Henfil (Centro Cultural São Paulo)',cat:'leitura',reg:'capital',cidade:'Paraíso, SP',end:'R. Vergueiro, 1000',min:8,dias:[0,1,1,1,2,1],hor:'Ter a sex 10h–20h · sáb e dom 10h–18h. Feriado não confirmado. Fecha seg.',cob:'misto',dur:'1 a 2 h',nova:1,
+ custo:0,extra:25,preco:'Grátis. Estacionamento na região, estimei R$ 25. Fica ao lado do metrô Vergueiro.',
+ fit:[[2,'O CCSP tem jardim, exposições e arquitetura dos anos 80'],[3,'Mais de 130 mil gibis e mangás para ler ali'],[2,'Gibis infantis e cinema grátis no jardim às 19h (19 a 21/11)']],
+ site:'https://prefeitura.sp.gov.br/w/noticia/gibiteca-henfil-oferece-mais-de-130-mil-exemplares',ing:'',dicas:'Cine na Praça: sessões grátis às 19h nos dias 19, 20 e 21/11. A Liberdade fica a uma estação de metrô.'},
+{id:'bib-villa-lobos',nome:'Biblioteca Parque Villa-Lobos',cat:'leitura',reg:'capital',cidade:'Alto de Pinheiros, SP',end:'Av. Queiroz Filho, 1205',min:30,dias:[0,1,1,1,1,1],hor:'Ter a dom e feriados 9h30–18h30 (entrada até 18h). Fecha seg.',cob:'coberto',dur:'1h30 + parque',nova:1,
+ custo:0,extra:20,preco:'Grátis. Estacionamento do parque: preço não confirmado, estimei R$ 20.',
+ fit:[[2,'Biblioteca dentro do parque, dá para caminhar depois'],[2,'Estúdio de podcast grátis, com reserva'],[3,'Contação de histórias, jogos e oficinas']],
+ site:'https://bvl.org.br',ing:'',dicas:'Combina com a Roda Rico, na mesma avenida. A programação de novembro ainda não saiu: veja no site.'},
+{id:'bib-sp',nome:'Biblioteca de São Paulo (Parque da Juventude)',cat:'leitura',reg:'capital',cidade:'Santana, SP',end:'Av. Cruzeiro do Sul, 2630',min:25,dias:[0,1,1,1,1,1],hor:'Ter a dom e feriados 9h30–18h30. Fecha seg.',cob:'coberto',dur:'1 a 2 h',nova:1,
+ custo:0,extra:20,preco:'Grátis. Estacionamento pago no parque, preço não publicado: estimei R$ 20.',
+ fit:[[2,'Prédio moderno no meio do Parque da Juventude'],[2,'Lugar tranquilo para ler; dá para emendar com o parque'],[2,'Livros infantis e o parque para correr depois']],
+ site:'https://bsp.org.br',ing:'',dicas:'Colada no metrô Carandiru. Abriu nos feriados de 2026, então deve abrir na sexta 20.'},
+{id:'bib-mackenzie',nome:'Biblioteca George Alexander (Mackenzie)',cat:'leitura',reg:'capital',cidade:'Higienópolis, SP',end:'R. da Consolação, 930 (Campus Higienópolis, Prédio 2)',min:8,dias:[1,1,1,1,2,1],hor:'Seg a sex 7h30–22h · sáb 9h15–14h45 (site do Mackenzie). Feriado não informado.',cob:'coberto',dur:'1 h',nova:1,
+ custo:0,extra:25,preco:'Grátis. Aberta ao público só para consulta, sem empréstimo. Estacionamento na região, estimei R$ 25.',
+ fit:[[3,'Prédio de 1926: a primeira biblioteca do Brasil com estantes abertas ao leitor'],[2,'Clima de universidade; bom para imaginar a faculdade'],[1,'Biblioteca universitária, pouco para criança']],
+ site:'https://www.mackenzie.br/biblioteca',ing:'',dicas:'A biblioteca vem de 1886 e o prédio de tijolinhos fica no campus histórico. Leve documento para a portaria. Telefone (11) 2114-8316. Fica a 1,5 km da Paulista e perto da Mário de Andrade.',alerta:'Horário da página da biblioteca, que não é atualizada há alguns anos: ligue antes. Em época de prova pode estar cheia.'},
+{id:'drummond',nome:'Drummond Livraria e Drummond Play (Conjunto Nacional)',cat:'leitura',reg:'capital',cidade:'Paulista, SP',end:'Av. Paulista, 2073, Conjunto Nacional, lojas 121, 122 e 153',min:5,dias:[1,1,1,1,1,1],hor:'Seg a sáb 10h–22h · dom e feriado 11h–20h (PublishNews, ago/2026). Abre na segunda.',cob:'coberto',dur:'1 h',nova:1,
+ custo:0,extra:30,preco:'Entrar é grátis; os livros são à parte. O Conjunto Nacional tem estacionamento pago: estimei R$ 30.',
+ fit:[[3,'Livraria grande no Conjunto Nacional, prédio modernista dos anos 1950'],[3,'Área nova voltada ao público geek (Drummond Play)'],[3,'Seção infantil pensada para a criança escolher sozinha']],
+ site:'https://www.publishnews.com.br/materias/2026/08/19/drummond-livraria-amplia-espaco-no-conjunto-nacional',ing:'',dicas:'A Livraria Cultura do Conjunto Nacional fechou em abril de 2024. A Drummond, aberta em 2022 no mesmo prédio, dobrou de tamanho em 2026, com mais de 80 mil livros. É um bom programa coberto para hoje.'},
+{id:'livraria-cultura',nome:'Livraria Cultura (saiu da Paulista)',cat:'leitura',reg:'capital',cidade:'Higienópolis, SP',end:'Av. Angélica, 1212',min:10,dias:[2,2,2,2,2,2],hor:'A loja da Paulista fechou em 01/04/2024. Reportagens citam a nova loja na Angélica, seg a sáb 9h–22h e dom 11h–20h, mas não confirmei se ela segue aberta.',cob:'coberto',dur:'1 h',nova:1,
+ custo:0,extra:25,preco:'Entrar é grátis. Estacionamento na região, estimei R$ 25.',
+ fit:[[2,'A Cultura num casarão histórico, se ainda estiver aberta'],[2,'Livraria tradicional, menor que a antiga'],[2,'Depende do que sobrou da seção infantil']],
+ site:gm('Livraria Cultura Av. Angélica 1212 São Paulo'),ing:'',dicas:'A foto é da loja antiga do Conjunto Nacional (2019), com o famoso dragão, que não existe mais. Para livraria na Paulista, vá à Drummond.',alerta:'A falência da Livraria Cultura foi decretada em 2023, e a loja da Paulista fechou por ordem de despejo em 2024. Confirme nas redes da livraria antes de ir à Angélica.'},
+{id:'bib-mario',nome:'Biblioteca Mário de Andrade',cat:'leitura',reg:'capital',cidade:'República, SP',end:'R. da Consolação, 94',min:12,dias:[2,2,2,2,2,2],hor:'Horário de 2026 não confirmado. No feriado de 20/11/2025 abriram as áreas comuns e a Sala Infantil.',cob:'coberto',dur:'1 h',nova:1,
+ custo:0,extra:30,preco:'Grátis. Sem estacionamento próprio: estimei R$ 30 na região.',
+ fit:[[3,'Prédio art déco de 1942, um dos mais bonitos do centro'],[1,'Pode achar que é só um prédio bonito'],[2,'Tem Sala Infantil']],
+ site:gm('Biblioteca Mário de Andrade R. da Consolação 94'),ing:'',dicas:'Fica a uns 5 min a pé da Monteiro Lobato: dá para fazer as duas.',alerta:'Horário de 2026 não confirmado: veja no site da prefeitura antes.'},
+{id:'bib-monteiro',nome:'Biblioteca Infantojuvenil Monteiro Lobato',cat:'leitura',reg:'capital',cidade:'Vila Buarque, SP',end:'R. General Jardim, 485',min:12,dias:[1,1,1,1,2,1],hor:'Seg a sex 8h–17h · sáb 10h–14h. No feriado de 2025 ficou fechada.',cob:'coberto',dur:'1 h',nova:1,
+ custo:0,extra:25,preco:'Grátis. Estacionamento na região, estimei R$ 25.',
+ fit:[[1,'Feita para crianças'],[1,'Já passou da faixa'],[3,'Exposição permanente do Sítio do Picapau Amarelo']],
+ site:'https://prefeitura.sp.gov.br/web/cultura/w/bibliotecas/monteiro_lobato/informa%C3%A7%C3%B5es-da-biblioteca',ing:'',dicas:'Uma das poucas opções que abrem na segunda. A Mário de Andrade fica a uns 5 min a pé.',alerta:'Na sexta 20 (feriado) deve estar fechada.'}
+];
+
+/* minha sugestão: [principal, segundo] por dia + plano de chuva */
+const SUG=[
+ {a:'aquario',b:'bario',chuva:'museu-ilusoes',nota:'Um dos poucos abertos. Bário a partir das 17h, sem entrada.'},
+ {a:'zoo',b:'simba',chuva:'catavento',nota:'Dia mais seco: Zoo de manhã, Safari à tarde.'},
+ {a:'arena-pixel',b:'dopamine',chuva:'museu-imaginacao',nota:'Dois programas cobertos, a 10 min um do outro. A previsão melhorou: só garoa.'},
+ {a:'catavento',b:'museu-lingua',chuva:'arcade-haus',nota:'Dois museus cobertos no centro. Se o tempo firmar, troque por Hopi Hari.'},
+ {a:'machu-picchu',b:'museu-ilusoes',chuva:'arcade-haus',nota:'Feriado: o que tem horário marcado, na zona sul.'},
+ {a:'maeda',b:'cidade-criancas',chuva:'roda-rico',nota:'Bate-volta a Itu. Ligue no Maeda antes.'}
+];
+
+/* Paulista: n = número na avenida; d: 0 fechado, 1 abre (pago), 2 não confirmado, 3 grátis, 4 grátis em parte do dia */
+const PAU=[
+ {nome:'Japan House',n:52,id:'japan-house',d:[0,3,3,3,3,3],obs:'Ter a sex 10h–18h · sáb e feriado 10h–19h.'},
+ {nome:'Casa das Rosas',n:37,d:[2,3,3,3,2,3],obs:'Museu ter a dom 10h–17h30. Segunda só o jardim. Não confirmado.'},
+ {nome:'Sesc Av. Paulista',n:119,d:[0,3,3,3,2,3],obs:'Ter a sex 10h–21h30 · fim de semana 10h–19h. Mirante com agendamento no app Credencial Sesc. Não confirmado.'},
+ {nome:'Itaú Cultural',n:149,id:'itau-cultural',d:[0,3,3,3,3,3],obs:'Ter a sáb 11h–20h · dom e feriado 11h–19h. Não confirmado.'},
+ {nome:'Reserva Cultural',n:900,d:[2,2,2,2,2,2],obs:'Cinema e café, pago. Guias dizem todo dia, 10h–22h.'},
+ {nome:'MASP',n:1578,id:'masp',d:[0,3,1,1,4,1],obs:'Grátis na terça (reserva online) e na sexta 18h–21h. Até 10 anos não paga.'},
+ {nome:'Parque Trianon',n:1700,d:[3,3,3,3,3,3],obs:'Todo dia 6h–18h. Ao ar livre.'},
+ {nome:'Drummond Livraria',n:2073,id:'drummond',d:[3,3,3,3,3,3],obs:'No Conjunto Nacional. Seg a sáb 10h–22h · dom e feriado 11h–20h. Entrada livre. A Livraria Cultura que ficava aqui fechou em 2024.'},
+ {nome:'IMS Paulista',n:2424,id:'ims-paulista',d:[0,3,3,3,3,3],obs:'Ter a dom e feriados 10h–20h (site oficial).'}
+];
+const PV=[['✕','fechado'],['abre','abre, pago'],['?','não confirmado'],['R$0','grátis'],['R$0*','grátis em parte do dia']];
+const PCOL=['var(--unk)','var(--l1)','var(--warn)','var(--ok)','var(--ok)'];
+let pauDay=0;
+function renderPaulista(){
+  document.getElementById('pauDays').innerHTML=DIAS.map((d,i)=>`<button class="chip" data-pd="${i}" aria-pressed="${pauDay===i}">${d.dow} ${d.d}${i===0?' · hoje':''}${d.hol?' ★':''}</button>`).join('');
+  document.querySelectorAll('[data-pd]').forEach(b=>b.onclick=()=>{pauDay=+b.dataset.pd; renderPaulista();});
+  const pts=[...PAU].sort((a,b)=>a.n-b.n), Y=88, step=880/(pts.length-1), X=i=>60+i*step;
+  const stations=[['Brigadeiro',3.5],['Trianon-MASP',5.5],['Consolação',7.5]];
+  let svg=`<line x1="30" y1="${Y}" x2="970" y2="${Y}" stroke="var(--line)" stroke-width="14" stroke-linecap="round"/>
+    <text x="30" y="${Y+104}" class="num">← Paraíso</text><text x="970" y="${Y+104}" class="num" text-anchor="end">Consolação →</text>`;
+  svg+=stations.map(([n,i])=>`<g><rect x="${X(i)-9}" y="${Y-9}" width="18" height="18" rx="4" fill="var(--l2)"/><text x="${X(i)}" y="${Y+4}" text-anchor="middle" font-size="11" font-weight="700" style="fill:#fff">M</text><text x="${X(i)}" y="${Y+80}" class="num" text-anchor="middle" style="fill:var(--l2)">metrô ${n}</text></g>`).join('');
+  svg+=pts.map((p,i)=>{const v=p.d[pauDay], up=i%2===0, x=X(i), ly=up?Y-26:Y+26;
+    return `<g ${p.id?`data-open="${p.id}" tabindex="0" role="button"`:''} aria-label="${esc(p.nome)}: ${PV[v][1]}">
+      <line x1="${x}" y1="${Y}" x2="${x}" y2="${ly}" stroke="${PCOL[v]}" stroke-width="2"/>
+      <circle cx="${x}" cy="${Y}" r="10" fill="${v===0?'var(--surface)':PCOL[v]}" stroke="${PCOL[v]}" stroke-width="3" ${v===4?'stroke-dasharray="3 2"':''}/>
+      <text x="${x}" y="${up?Y-48:Y+44}" text-anchor="middle" font-size="13" font-weight="700" ${v===0?'opacity=".45"':''}>${esc(p.nome)}</text>
+      <text x="${x}" y="${up?Y-33:Y+58}" text-anchor="middle" class="num">nº ${p.n} · ${PV[v][0]}</text></g>`;}).join('');
+  document.getElementById('avSvg').innerHTML=svg;
+  document.getElementById('pauTbl').innerHTML=`<thead><tr><th>Lugar</th>${DIAS.map((d,i)=>`<th class="${i===pauDay?'now':''}">${d.dow} ${d.d}</th>`).join('')}<th>Horário e observações</th></tr></thead><tbody>`+
+    PAU.map(p=>`<tr><th style="font-weight:600">${p.id?`<a href="#" data-open="${p.id}">${esc(p.nome)}</a>`:esc(p.nome)} <span class="num" style="color:var(--muted);font-size:11px">nº ${p.n}</span></th>${p.d.map(v=>`<td><span class="pv v${v}" title="${PV[v][1]}">${PV[v][0]}</span></td>`).join('')}<td class="ob">${esc(p.obs)}</td></tr>`).join('')+'</tbody>';
+}
+
+/* Liberdade a pé: [nome, endereço, minutos, tipos, texto, foto] */
+const WALK=[
+ ['Praça da Liberdade e a feira','Praça da Liberdade, s/n (saída do metrô)',40,['ver','comer'],'Feira de artesanato e comida de rua aos sábados e domingos (no feriado, provavelmente não). Na praça fica a Igreja Santa Cruz das Almas dos Enforcados, ligada à história do soldado Chaguinhas, enforcado ali em 1821.','lib-praca'],
+ ['Livraria Sol','Praça da Liberdade',15,['comprar'],'Mangás e revistas japonesas, no bairro desde 1949. A fonte é antiga: confira se continua aberta.',''],
+ ['Rua dos Aflitos','R. dos Aflitos, 70',20,['ver','comer'],'Capela dos Aflitos, de 1779, o que restou do antigo cemitério. Na mesma rua, a Kirameki (nº 31) vende doces japoneses.',''],
+ ['Lojas da Galvão Bueno','R. Galvão Bueno, 16 a 37',60,['comprar'],'Daiso (nº 37): megaloja japonesa de papelaria e utilidades. Marukai (nº 34): mercado para levar doces e salgadinhos. Empório Azuki (nº 16): figuras, cartas de Pokémon e cosplay (confira se segue aberta).','liberdade'],
+ ['Luminárias, torii e Jardim Oriental','R. Galvão Bueno, junto ao Viaduto Cidade de Osaka',20,['ver'],'As luminárias suzuran vermelhas, os pórticos torii e o Jardim Oriental. Grátis e bom para fotos.','lib-jardim'],
+ ['Almoço: lámen','R. Thomaz Gonzaga / R. Galvão Bueno',60,['comer'],'Aska Lamen: as fontes dão Galvão Bueno, 466 ou Thomaz Gonzaga, 87. Dizem que só aceita dinheiro e tem fila. Alternativas na Thomaz Gonzaga: Ikkousha (nº 45) e Lamen Kazu.',''],
+ ['Sobremesa: taiyaki','R. Galvão Bueno, 568',15,['comer'],'Hachi Crepe e Taiyaki: bolinho em forma de peixe, com recheios variados e opções veganas. O número varia entre 568 e 586.',''],
+ ['Templo Busshinji','R. São Joaquim, 285',15,['ver'],'Templo budista com cerimônias abertas ao público. Não achei horário de visita: talvez só dê para ver por fora.',''],
+ ['Museu Histórico da Imigração Japonesa','R. São Joaquim, 381, 7º ao 9º andar',90,['museu'],'Ter a dom 10h–17h, última entrada às 16h. Inteira R$ 25, estudante R$ 12, grátis às quartas. A página do museu pode estar desatualizada: ligue antes, (11) 3209-5465. O metrô São Joaquim fica ao lado, para voltar.','lib-museu']
+];
+const WTAG={ver:'ver',comer:'comer',comprar:'compras',museu:'museu'};
+const LIBD=[['warn','Lojas e comida abrem, mas o museu fecha.'],['ok','Tudo aberto, sem feira e mais vazio. É o dia mais seco da semana.'],['ok','Museu grátis às quartas. Previsão de garoa leve: bom dia para ir.'],['ok','Tudo aberto. Garoa prevista. Dá para emendar com a Gibiteca.'],['warn','Feriado: ruas só para pedestres e bairro lotado. A feira provavelmente não funciona. Vá de metrô.'],['ok','Tem a feira, mas é o dia mais cheio. A Black São Paulo Walk sai da praça às 10h.']];
+function renderWalk(){
+  let t=600;
+  document.getElementById('walk').innerHTML=WALK.map(([n,a,m,tg,tx,f],i)=>{
+    const h=`${Math.floor(t/60)}h${String(t%60).padStart(2,'0')}`; t+=m+5;
+    return `<li class="wk${i===WALK.length-1?' end':''}"><span class="n">${i+1}</span><div style="min-width:0">
+      <div class="hd"><h3>${esc(n)}</h3><span class="t">${h} · ${minTxt(m)}</span>${tg.map(x=>`<span class="wtag">${WTAG[x]}</span>`).join('')}</div>
+      <p>${esc(tx)}</p><div class="ad"><a href="${gm(n+' '+a+' Liberdade São Paulo')}" target="_blank" rel="noopener">${esc(a)} ↗</a></div></div>
+      ${f?`<img src="fotos/${f}.jpg" alt="" loading="lazy">`:'<span></span>'}</li>`;}).join('');
+  document.getElementById('libDays').innerHTML=DIAS.map((d,i)=>`<b>${d.dow} ${d.d}</b><span class="ic ${LIBD[i][0]}">${LIBD[i][0]==='ok'?'✓':'!'}</span><span>${esc(LIBD[i][1])}</span>`).join('');
+}
+
+const byId=Object.fromEntries(P.map(p=>[p.id,p]));
+const brl=v=>v==null?'a confirmar':v===0?'Grátis':'R$ '+Math.round(v).toLocaleString('pt-BR');
+const total=p=>p.custo==null?null:p.custo+(p.extra||0);
+// custo de um dia: estrada de bate-volta na mesma cidade conta uma vez só
+const dayCost=ps=>{let s=0;const car={};for(const p of ps){s+=p.custo??0;const k=p.reg==='bate-volta'?'bv:'+p.cidade:p.id;car[k]=Math.max(car[k]||0,p.extra||0);}return s+Object.values(car).reduce((a,b)=>a+b,0);};
+const fitSum=p=>p.fit.reduce((s,f)=>s+f[0],0);
+const pips=(n,c)=>`<span class="pips" style="--pc:${c}" aria-label="${n} de 3">${[1,2,3].map(i=>`<i class="${i<=n?'on':''}"></i>`).join('')}</span>`;
+const minTxt=m=>m<60?`${m} min`:`${Math.floor(m/60)}h${m%60?String(m%60).padStart(2,'0'):''}`;
+const esc=s=>String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+
+function wxIcon(c){
+  const cloud='<path d="M7 17h10a4 4 0 0 0 .5-7.97A5.5 5.5 0 0 0 6.6 9.6 3.7 3.7 0 0 0 7 17z" fill="var(--muted)" opacity=".55"/>';
+  const drops=n=>Array.from({length:n},(_,i)=>`<line x1="${8+i*4}" y1="19" x2="${7+i*4}" y2="22" stroke="var(--l1)" stroke-width="1.6" stroke-linecap="round"/>`).join('');
+  let extra='';
+  if(c===95) extra='<path d="M12.5 15l-2 3.5h2.4l-1.4 3.5" stroke="var(--l4)" stroke-width="1.7" fill="none" stroke-linecap="round"/>';
+  else if(c===80) extra=drops(3);
+  else if(c===51) extra=drops(2);
+  return `<svg viewBox="0 0 24 24" aria-hidden="true">${cloud}${extra}</svg>`;
+}
+const wxTxt={51:'garoa',3:'nublado',80:'pancadas',95:'temporal'};
+
+/* ---------- linha da semana ---------- */
+let dayFilter=-1;
+function renderMetro(){
+  const el=document.getElementById('metro');
+  el.innerHTML=DIAS.map((d,i)=>{
+    const open=P.filter(p=>p.dias[i]===1).length, maybe=P.filter(p=>p.dias[i]===2).length;
+    const s=SUG[i], a=byId[s.a], b=byId[s.b], r=byId[s.chuva];
+    return `<button class="stop${d.hol?' hol':''}" data-day="${i}" aria-pressed="${dayFilter===i}">
+      <span class="daybox"><span class="dow">${d.dow}</span><span class="dnum">${d.d}</span>
+        <span class="wx">${wxIcon(d.wx.c)} ${d.wx.max}°/${d.wx.min}° · ${d.wx.p}%</span></span>
+      <span class="dot"></span>
+      <span class="metabox">${d.hol?'<span class="tag">Feriado</span>':`<span class="tag mute">${wxTxt[d.wx.c]}</span>`}
+        <span class="open"><b>${open}</b> abertos · ${maybe} a confirmar</span></span>
+      <span class="sug">
+        ${[a,b].map(p=>`<span class="pick"><img src="fotos/${p.id}.jpg" alt=""><span>${esc(p.nome)}<small>${brl(total(p))} p/ 4</small></span></span>`).join('')}
+        <span class="rain">☂ Plano B: <b>${esc(r.nome)}</b><br>${esc(s.nota)}</span>
+      </span>
+    </button>`;}).join('');
+  el.querySelectorAll('.stop').forEach(b=>b.addEventListener('click',()=>{
+    const i=+b.dataset.day; dayFilter=dayFilter===i?-1:i; F.day=dayFilter; renderMetro(); renderFilters(); renderGrid();
+    document.getElementById('explorar').scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'});
+  }));
+}
+
+/* ---------- filtros ---------- */
+const F={day:-1,cat:'all',reg:'all',cob:false,free:false,who:'all',sort:'familia',src:'all'};
+function chip(group,val,label,sw){return `<button class="chip" data-g="${group}" data-v="${val}" aria-pressed="${String(F[group])===String(val)}">${sw?`<span class="sw" style="background:${sw}"></span>`:''}${label}</button>`}
+function renderFilters(){
+  const el=document.getElementById('filters');
+  el.innerHTML=`
+  <div class="frow"><span class="lbl">Dia</span>${chip('day',-1,'Qualquer dia')}${DIAS.map((d,i)=>chip('day',i,`${d.dow} ${d.d}${d.hol?' ★':''}`)).join('')}</div>
+  <div class="frow"><span class="lbl">Categoria</span>${chip('cat','all','Todas')}${Object.entries(CATS).map(([k,c])=>chip('cat',k,c.n,c.c)).join('')}</div>
+  <div class="frow"><span class="lbl">Para quem</span>${chip('who','all','Sem filtro')}${chip('who','todos','Agrada todo mundo')}${chip('who','f15','Top para a de 15')}${chip('who','f9','Top para a de 9')}${chip('who','pais','Top para vocês')}</div>
+  <div class="frow"><span class="lbl">Onde</span>${chip('reg','all','Tudo')}${Object.entries(REG).map(([k,v])=>chip('reg',k,v)).join('')}
+     <button class="chip" data-g="cob" data-v="toggle" aria-pressed="${F.cob}">☂ Só coberto ou misto</button>
+     <button class="chip" data-g="free" data-v="toggle" aria-pressed="${F.free}">R$ 0 Ingresso grátis (em algum dia)</button>
+     ${chip('src','all','Todas as fontes')}${chip('src','lista','Da sua lista')}${chip('src','nova','Novas')}</div>
+  <div class="frow"><span class="lbl">Ordenar</span>${chip('sort','familia','Nota da família')}${chip('sort','preco','Menor custo')}${chip('sort','perto','Mais perto')}</div>`;
+  el.querySelectorAll('.chip').forEach(b=>b.addEventListener('click',()=>{
+    const g=b.dataset.g, v=b.dataset.v;
+    if(g==='cob') F.cob=!F.cob; else if(g==='free') F.free=!F.free; else F[g]=(g==='day')?+v:v;
+    if(g==='day'){dayFilter=F.day; renderMetro();}
+    renderFilters(); renderGrid();
+  }));
+}
+function filtered(){
+  let L=P.filter(p=>{
+    if(F.day>=0 && p.dias[F.day]===0) return false;
+    if(F.cat!=='all' && p.cat!==F.cat) return false;
+    if(F.reg!=='all' && p.reg!==F.reg) return false;
+    if(F.cob && p.cob==='ar-livre') return false;
+    if(F.free && p.custo!==0) return false;
+    if(F.src==='nova' && !p.nova) return false;
+    if(F.src==='lista' && p.nova) return false;
+    if(F.who==='todos' && p.fit.some(f=>f[0]<2)) return false;
+    if(F.who==='f15' && p.fit[1][0]<3) return false;
+    if(F.who==='f9' && p.fit[2][0]<3) return false;
+    if(F.who==='pais' && p.fit[0][0]<3) return false;
+    return true;});
+  const s={familia:(a,b)=>fitSum(b)-fitSum(a)||((total(a)??9e9)-(total(b)??9e9)),
+           preco:(a,b)=>(total(a)??9e9)-(total(b)??9e9),
+           perto:(a,b)=>a.min-b.min}[F.sort];
+  return L.sort(s);
+}
+function card(p){
+  const c=CATS[p.cat];
+  return `<article class="card">
+    <div class="ph"><img src="fotos/${p.id}.jpg" alt="${esc(p.nome)}" loading="lazy">
+      <span class="line-pill${c.y?' y':''}" style="--c:${c.c}"><i></i>${c.n}</span>
+      <span class="src${p.nova?' new':''}">${p.nova?'Nova':'Sua lista'}</span>
+      ${p.alerta?'<span class="flag">⚠ Atenção</span>':''}</div>
+    <div class="bd">
+      <h3>${esc(p.nome)}</h3>
+      <p class="meta">${esc(p.cidade)} · ${minTxt(p.min)} de carro · ${COB[p.cob]}</p>
+      <div class="days">${p.dias.map((v,i)=>`<span class="dd s${v}${F.day===i?' sel':''}" title="${DIAS[i].dow} ${DIAS[i].d}: ${['fechado','abre','não confirmado'][v]}">${DIAS[i].dow}<small>${DIAS[i].d}</small></span>`).join('')}</div>
+      <div class="fit">${p.fit.map((f,i)=>`<div class="fr"><span class="who">${WHO[i].k}</span>${pips(f[0],WHO[i].c)}<span class="ft">${esc(f[1])}</span></div>`).join('')}</div>
+      <div class="foot"><div class="price">${brl(total(p))}<small>${p.custo==null?'preço não publicado':'estimativa para os 4'}</small></div>
+      <button class="btn" data-open="${p.id}">Detalhes</button></div>
+    </div></article>`;
+}
+function renderGrid(){
+  const L=filtered();
+  document.getElementById('count').innerHTML=`<b>${L.length}</b> de ${P.length} opções${F.day>=0?` abertas (ou a confirmar) em ${DIAS[F.day].dow} ${DIAS[F.day].d}`:''}`;
+  document.getElementById('grid').innerHTML=L.length?L.map(card).join(''):'<div class="empty">Nenhum lugar com esses filtros. Tire um filtro para ver mais.</div>';
+}
+
+/* ---------- grade ---------- */
+function renderMatrix(){
+  const head=`<thead><tr><th class="nm">Lugar</th>${DIAS.map(d=>`<th class="${d.hol?'hol':''}">${d.dow} ${d.d}${d.hol?' ★':''}</th>`).join('')}<th>Carro</th><th>Para 4</th></tr></thead>`;
+  let body='';
+  for(const [k,c] of Object.entries(CATS)){
+    const L=P.filter(p=>p.cat===k); if(!L.length) continue;
+    body+=`<tr class="grp"><th colspan="9">${c.n}</th></tr>`;
+    body+=L.map(p=>`<tr><th class="nm"><span class="b" style="background:${c.c}"></span><a href="#" data-open="${p.id}">${esc(p.nome)}</a></th>${p.dias.map(v=>`<td><span class="cell s${v}">${['✕','●','?'][v]}</span></td>`).join('')}<td class="k num">${minTxt(p.min)}</td><td class="k num">${brl(total(p))}</td></tr>`).join('');
+  }
+  document.getElementById('mx').innerHTML=head+`<tbody>${body}</tbody>`;
+}
+
+/* ---------- custos ---------- */
+function renderBars(){
+  const inc=document.getElementById('incExtra').checked;
+  const L=P.filter(p=>p.custo!=null).map(p=>({p,v:p.custo+(inc?p.extra||0:0)})).sort((a,b)=>a.v-b.v);
+  const max=Math.max(...L.map(x=>x.v));
+  document.getElementById('bars').innerHTML=L.map(({p,v})=>{
+    const c=CATS[p.cat].c, w1=p.custo/max*78, w2=inc?(p.extra||0)/max*78:0;
+    return `<div class="bar"><span class="bn" title="${esc(p.nome)}">${esc(p.nome)}</span><span class="track">
+      <span class="fill" style="--c:${c};width:${w1}%"></span>${w2?`<span class="fill ex" style="--c:${c};left:${w1}%;width:${w2}%"></span>`:''}
+      <span class="bv" style="left:calc(${w1+w2}% + 6px)">${v===0?'Grátis':'R$ '+v.toLocaleString('pt-BR')}</span></span></div>`;}).join('');
+  document.getElementById('tbd').innerHTML='Barra cheia: ingressos. Barra listrada: estacionamento e estrada.<br>Sem preço publicado: '+P.filter(p=>p.custo==null).map(p=>esc(p.nome)).join(', ')+'.';
+}
+
+/* ---------- radar de distância ---------- */
+function renderRadar(){
+  const svg=document.getElementById('radar'), cx=320, cy=320, R=m=>34+Math.min(m,190)*1.42;
+  const keys=Object.keys(CATS), slice=2*Math.PI/keys.length;
+  let s='';
+  [30,60,90,120,180].forEach(m=>{s+=`<circle class="ring" cx="${cx}" cy="${cy}" r="${R(m)}"/><text class="ringlbl" x="${cx+4}" y="${cy-R(m)-4}">${m<60?m+' min':m/60+' h'}</text>`});
+  keys.forEach((k,ki)=>{
+    const a=-Math.PI/2+ki*slice;
+    s+=`<line x1="${cx}" y1="${cy}" x2="${cx+Math.cos(a)*300}" y2="${cy+Math.sin(a)*300}" stroke="var(--line)" stroke-dasharray="2 4"/>`;
+    const L=P.filter(p=>p.cat===k).sort((x,y)=>x.min-y.min);
+    L.forEach((p,i)=>{
+      const ang=a+slice*(i+.5)/L.length, r=R(p.min), x=cx+Math.cos(ang)*r, y=cy+Math.sin(ang)*r;
+      const right=Math.cos(ang)>=0, short=p.nome.split(/[(\/]/)[0].trim().replace(/^(Museu d[aoe]s? )/,'M. ').replace('Parque ','P. ').slice(0,18);
+      s+=`<g class="pt" data-open="${p.id}" tabindex="0"><title>${esc(p.nome)}: ${minTxt(p.min)}</title><circle cx="${x}" cy="${y}" r="7" fill="${CATS[k].c}" stroke="var(--surface)" stroke-width="2"/>
+        <text class="lbl" x="${x+(right?10:-10)}" y="${y+3.5}" text-anchor="${right?'start':'end'}">${esc(short)}</text></g>`;
+    });
+  });
+  s+=`<circle cx="${cx}" cy="${cy}" r="9" class="ctr"/><text x="${cx}" y="${cy+24}" text-anchor="middle" font-size="11" font-weight="700">Av. Paulista</text>`;
+  svg.innerHTML=s;
+}
+
+/* ---------- planejador ---------- */
+const KEY='passeios-1621nov-plano';
+let PLAN=SUG.map(s=>[s.a,s.b]);
+try{const sv=JSON.parse(localStorage.getItem(KEY)||'null'); if(Array.isArray(sv)&&sv.length===6) PLAN=sv;}catch(e){}
+function save(){try{localStorage.setItem(KEY,JSON.stringify(PLAN))}catch(e){}}
+function opts(i,sel){
+  const L=[...P].sort((a,b)=>a.dias[i]===b.dias[i]?a.nome.localeCompare(b.nome,'pt'):(a.dias[i]===1?-1:b.dias[i]===1?1:a.dias[i]===2?-1:1));
+  return `<option value="">— nada —</option>`+L.map(p=>`<option value="${p.id}"${p.id===sel?' selected':''}>${p.dias[i]===0?'✕ ':p.dias[i]===2?'? ':''}${esc(p.nome)}</option>`).join('');
+}
+function renderPlan(){
+  const el=document.getElementById('planDays');
+  el.innerHTML=DIAS.map((d,i)=>{
+    const ids=PLAN[i].filter(Boolean), ps=ids.map(id=>byId[id]).filter(Boolean);
+    const cost=dayCost(ps), unk=ps.some(p=>p.custo==null);
+    const closed=ps.filter(p=>p.dias[i]===0), maybe=ps.filter(p=>p.dias[i]===2);
+    let w=''; if(closed.length) w=`<div class="warn">✕ ${closed.map(p=>esc(p.nome)).join(', ')} fecha nesse dia.</div>`;
+    else if(maybe.length) w=`<div class="warn w">? ${maybe.map(p=>esc(p.nome)).join(', ')}: funcionamento não confirmado.</div>`;
+    return `<div class="pd"><div class="pdh${d.hol?' hol':''}">${d.dow} ${d.d}<small>${d.hol?'feriado':wxTxt[d.wx.c]+' · '+d.wx.p+'%'}</small></div>
+      <select id="plan-${i}-0" data-i="${i}" data-s="0" aria-label="${d.dow} ${d.d}, programa principal">${opts(i,PLAN[i][0])}</select>
+      <select id="plan-${i}-1" data-i="${i}" data-s="1" aria-label="${d.dow} ${d.d}, segundo programa">${opts(i,PLAN[i][1])}</select>
+      <div class="pc">${ps.length?brl(cost)+(unk?'+':''):'—'}</div>${w}</div>`;}).join('');
+  el.querySelectorAll('select').forEach(s=>s.addEventListener('change',()=>{PLAN[+s.dataset.i][+s.dataset.s]=s.value; save(); renderPlan();}));
+  const all=PLAN.flat().filter(Boolean).map(id=>byId[id]).filter(Boolean);
+  const sum=PLAN.reduce((s,day)=>s+dayCost(day.filter(Boolean).map(id=>byId[id]).filter(Boolean)),0), unk=all.filter(p=>p.custo==null);
+  const n=all.length||1, sc=[0,1,2].map(k=>all.reduce((s,p)=>s+p.fit[k][0],0)/n);
+  document.getElementById('summary').innerHTML=`
+    <div><div class="eyebrow">Total estimado da semana</div><div class="big">${brl(sum)}</div>
+    <p>${all.length} passeios para 4 pessoas, com estacionamento e estrada${unk.length?`. Faltam os preços de: ${unk.map(p=>esc(p.nome)).join(', ')}`:''}.</p></div>
+    <div style="display:grid;gap:8px"><div class="eyebrow">Quanto cada um vai curtir (média)</div>
+      ${WHO.map((w,k)=>`<div class="meter"><span>${w.k}</span><span class="t"><i style="width:${sc[k]/3*100}%;background:${w.c}"></i></span><span class="num">${sc[k].toFixed(1)}</span></div>`).join('')}</div>
+    <div class="acts"><button class="btn" id="resetPlan">Voltar à sugestão</button><button class="btn ghost" id="clearPlan">Limpar</button></div>
+    <p>Fica salvo só neste navegador.</p>`;
+  document.getElementById('resetPlan').onclick=()=>{PLAN=SUG.map(s=>[s.a,s.b]);save();renderPlan();};
+  document.getElementById('clearPlan').onclick=()=>{PLAN=DIAS.map(()=>['','']);save();renderPlan();};
+}
+
+/* ---------- avisos ---------- */
+function renderNotes(){
+  const N=[
+   ['var(--bad)','Já encerrados ou fora da semana',`<ul><li><b>Expo Titanic</b> (Eldorado): fechou em ago/2026.</li><li><b>Baile Tribruxo Harry Potter</b>: encerrado, como já dizia o post.</li><li><b>Villa de Natal do Ibirapuera</b> abre só em 27/11. <b>Pixel Zoo Ocean</b> estreia em 26/11. <b>Monopoly Experience</b> termina em 15/11.</li><li>O <b>Natal Iluminado</b> da prefeitura deve começar depois desta semana.</li></ul>`],
+   ['var(--warn)','Cupons dos posts',`<ul><li><b>GP15</b> (Arena Pixel): não achei a regra publicada. Teste no checkout.</li><li><b>ASDICASDAPRI10</b> (Dopamine) e <b>DICASDAPRI10</b> (Thermas): não confirmados.</li><li>Alternativas encontradas: <b>DOPMNEXFEV</b> (Dopamine, 15%, até 20/11), <b>MD15</b> (Simba Safari), <b>SPCRIANCAS</b> (PopHaus).</li></ul>`],
+   ['var(--l1)','Ligar antes de sair',`<ul><li><b>Parque Maeda</b>: tem morango em novembro? (11) 2118-6200.</li><li><b>Roller Dance</b>: não achei com esse nome. Qual pista você viu?</li><li><b>Thermas da Mata</b>, <b>Wet'n Wild</b> e <b>Animália</b>: calendário da semana não publicado.</li><li><b>Machu Picchu VR</b>: confira os dias da sessão na Fever (temporada até 22/11).</li></ul>`],
+   ['var(--ok)','Dias grátis da semana',`<ul><li><b>Terça 17:</b> MASP o dia todo (reserve online).</li><li><b>Quarta 18:</b> Museu Afro Brasil e Museu do Ipiranga.</li><li><b>Sexta 20:</b> MASP das 18h às 21h; Expo Consciência Negra na Praça das Artes.</li><li><b>Sábado 21:</b> Pinacoteca (segundo guias, não confirmado).</li><li><b>Sempre grátis:</b> Itaú Cultural, IMS, Japan House, Museu de Zoologia, bibliotecas, Templo Zu Lai.</li></ul>`],
+   ['var(--l7)','Bibliotecas e Liberdade',`<ul><li>As bibliotecas são grátis; só o estacionamento é estimado.</li><li>No feriado (sex 20/11), as confirmadas abertas são a <b>Biblioteca de São Paulo</b> e a <b>Villa-Lobos</b>. A <b>Monteiro Lobato</b> deve fechar.</li><li>Na Liberdade, lojas, capela, templo e Jardim Oriental não têm horário confirmado, e a <b>feira</b> é só sábado e domingo.</li></ul>`],
+   ['var(--l5)','Como calculei os valores',`<p>Considerei 2 inteiras + 2 meias, supondo que as duas têm carteirinha de estudante. A de 9 anos não tem gratuidade por idade em nenhum lugar da lista (o limite costuma ser até 3 ou 4 anos). Usei o dia mais barato em que o lugar abre. Estrada = combustível (~R$ 0,57/km) + pedágios, ida e volta.</p>`]
+  ];
+  document.getElementById('notes').innerHTML=N.map(([c,t,b])=>`<div class="note"><h3><i style="background:${c}"></i>${t}</h3>${b}</div>`).join('');
+}
+
+/* ---------- detalhe ---------- */
+const dlg=document.getElementById('dlg');
+function openDetail(id){
+  const p=byId[id]; if(!p) return; const c=CATS[p.cat];
+  document.getElementById('dlgBody').innerHTML=`
+   <div class="dlg-ph"><img src="fotos/${p.id}.jpg" alt="${esc(p.nome)}"><span class="line-pill${c.y?' y':''}" style="--c:${c.c}"><i></i>${c.n}</span><button class="dlg-x" id="dlgX" aria-label="Fechar">×</button></div>
+   <div class="dlg-bd">
+     <div><div class="eyebrow">${REG[p.reg]} · ${esc(p.cidade)} · ${p.nova?'opção nova':'da sua lista'}</div><h2>${esc(p.nome)}</h2></div>
+     ${p.alerta?`<div class="alertbox">⚠ ${esc(p.alerta)}</div>`:''}
+     <div class="days">${p.dias.map((v,i)=>`<span class="dd s${v}">${DIAS[i].dow}<small>${DIAS[i].d}</small></span>`).join('')}</div>
+     <div class="fit">${p.fit.map((f,i)=>`<div class="fr"><span class="who">${WHO[i].k}</span>${pips(f[0],WHO[i].c)}<span class="ft">${esc(f[1])}</span></div>`).join('')}</div>
+     <dl class="kv">
+       <dt>Para 4</dt><dd><b class="num">${brl(total(p))}</b>${p.custo!=null&&p.extra?` <span style="color:var(--muted)">(ingressos ${brl(p.custo)} + carro ${brl(p.extra)}: ${p.reg==='bate-volta'?'combustível e pedágio, ida e volta':'estacionamento'})</span>`:''}${p.reg==='bate-volta'&&p.extra?`<br><small style="color:var(--muted)">Se fizer outro passeio em ${esc(p.cidade)} no mesmo dia, o planejador conta a estrada uma vez só.</small>`:''}</dd>
+       <dt>Preços</dt><dd>${esc(p.preco)}</dd>
+       <dt>Horário</dt><dd>${esc(p.hor)}</dd>
+       <dt>Endereço</dt><dd>${esc(p.end)}</dd>
+       <dt>Carro</dt><dd>~${minTxt(p.min)} a partir da Av. Paulista</dd>
+       <dt>Tipo</dt><dd>${COB[p.cob]} · ${esc(p.dur)}</dd>
+       <dt>Dicas</dt><dd>${esc(p.dicas)}</dd>
+       ${p.cupom?`<dt>Cupom</dt><dd><span class="coupon">${esc(p.cupom)}<button id="cpy">Copiar</button></span></dd>`:''}
+     </dl>
+     <div class="links">
+       ${p.walk?`<button class="btn" id="goWalk">Ver o roteiro a pé ↓</button>`:''}
+       ${p.ing?`<a class="btn" href="${p.ing}" target="_blank" rel="noopener">Ingressos ↗</a>`:''}
+       <a class="btn ghost" href="${p.site}" target="_blank" rel="noopener">Site ↗</a>
+       <a class="btn ghost" href="${gm(p.nome+' '+p.end)}" target="_blank" rel="noopener">Mapa ↗</a>
+       <a class="btn ghost" href="https://waze.com/ul?q=${encodeURIComponent(p.end+' '+p.cidade)}" target="_blank" rel="noopener">Waze ↗</a>
+     </div>
+   </div>`;
+  document.getElementById('dlgX').onclick=()=>dlg.close();
+  const gw=document.getElementById('goWalk');
+  if(gw) gw.onclick=()=>{dlg.close(); document.getElementById('liberdade').scrollIntoView({behavior:'smooth'});};
+  const cp=document.getElementById('cpy');
+  if(cp) cp.onclick=()=>{navigator.clipboard?.writeText(p.cupom).then(()=>cp.textContent='Copiado',()=>cp.textContent='Selecione e copie')};
+  if(dlg.showModal) dlg.showModal(); else dlg.setAttribute('open','');
+}
+dlg.addEventListener('click',e=>{if(e.target===dlg) dlg.close();});
+document.addEventListener('click',e=>{const t=e.target.closest('[data-open]'); if(t){e.preventDefault(); openDetail(t.dataset.open);}});
+document.addEventListener('keydown',e=>{if(e.key==='Enter'){const t=e.target.closest('g[data-open]'); if(t) openDetail(t.dataset.open);}});
+document.getElementById('incExtra').addEventListener('change',renderBars);
+
+renderMetro(); renderFilters(); renderGrid(); renderMatrix(); renderBars(); renderRadar(); renderPlan(); renderNotes(); renderWalk(); renderPaulista();
+</script>
+
+</body>
+</html>
